@@ -1,9 +1,10 @@
 import React from 'react';
-import logo from "../assets/logo.png"
-import india from "../assets/indian.png"
-import amra from "../assets/amra.png"
-import shemaroo from "../assets/shemaroo.png"
-import iod from "../assets/iod.png"
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaPinterestP, FaTwitter, FaYoutube } from 'react-icons/fa'; // Importing icons
+import logo from "../assets/logo.png";
+import india from "../assets/indian.png";
+import amra from "../assets/amra.png";
+import shemaroo from "../assets/shemaroo.png";
+import iod from "../assets/iod.png";
 
 const Footer = () => {
   return (
@@ -11,7 +12,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4">
         {/* Trusted by Organizations Section */}
         <div className="text-center mb-10">
-          <h3 className="text-5xl mb-4">Trusted by the world's leading organizations</h3>
+          <h3 className="text-4xl mb-4">Trusted by the world's leading organizations</h3>
           <div className="flex justify-center items-center gap-8 flex-wrap">
             {/* Organization Logos */}
             <div className="w-32 h-16">
@@ -84,13 +85,37 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Footer Bottom */}
-        <div className="text-center text-gray-400">
-          <p>Copyright © 2014 - 2024. All Rights Reserved by Markle Tech & Media Pvt. Ltd.</p>
-          <div className="flex justify-center mt-4 space-x-8">
-            <a href="#" className="text-gray-400 hover:text-white">Terms</a>
-            <a href="#" className="text-gray-400 hover:text-white">Privacy</a>
-            <a href="#" className="text-gray-400 hover:text-white">Cookies</a>
+        {/* Horizontal line */}
+        <hr className="border-t border-gray-500 mb-6" />
+
+        {/* Footer Bottom - Single Line */}
+        <div className="flex justify-between items-center flex-wrap text-gray-400 space-y-4 md:space-y-0">
+          {/* Copyright text */}
+          <div>
+            <p>Copyright © 2014 - 2024. All Rights Reserved by Markle Tech & Media Pvt. Ltd.</p>
+          </div>
+
+          {/* Terms, Privacy, Cookies Links */}
+          <div className="flex space-x-4">
+            <a href="#" className="hover:text-white">Terms</a>
+            <a href="#" className="hover:text-white">Privacy</a>
+            <a href="#" className="hover:text-white">Cookies</a>
+          </div>
+
+          {/* Social Media Icons */}
+          <div className="flex space-x-4">
+            <a href="#" className="text-gray-400 hover:text-white">
+              <FaFacebookF />
+            </a>
+            <a href="#" className="text-gray-400 hover:text-white">
+              <FaTwitter />
+            </a>
+            <a href="#" className="text-gray-400 hover:text-white">
+              <FaInstagram />
+            </a>
+            <a href="#" className="text-gray-400 hover:text-white">
+              <FaYoutube />
+            </a>
           </div>
         </div>
       </div>

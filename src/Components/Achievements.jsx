@@ -51,11 +51,10 @@ const Achievements = () => {
   return (
     <div className='container mx-auto px-4 py-16 flex flex-col items-center'>
       <h1 className="text-5xl text-purple-950 mb-8">
-        Our Achievements
+      Stories of Satisfaction
       </h1>
-      <p className="text-2xl text-gray-600 mb-12 max-w-3xl">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </p>
+      <p className="text-2xl max-w-5xl text-center text-gray-600 mb-12">
+      The team at Markle Tech and Media delivered outstanding results. Their strategic approach, technical expertise & attention to every detail sets them apart.      </p>
       <div className="flex justify-center w-full max-w-7xl mb-20">
         <img 
           src={achievement} 

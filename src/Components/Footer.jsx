@@ -12,19 +12,19 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4">
         {/* Trusted by Organizations Section */}
         <div className="text-center mb-10">
-          <h3 className="text-4xl mb-4">Trusted by the world's leading organizations</h3>
+          <h3 className="text-3xl md:text-4xl lg:text-5xl text-white mb-8 text-center">Trusted by the world's leading organizations</h3>
           <div className="flex justify-center items-center gap-8 flex-wrap">
             {/* Organization Logos */}
-            <div className="w-32 h-16">
+            <div className="w-28 h-16 md:w-32">
               <img src={india} alt="IndianOil Logo" className="h-full object-contain" />
             </div>
-            <div className="w-32 h-16">
+            <div className="w-28 h-16 md:w-32">
               <img src={iod} alt="IOD Logo" className="h-full object-contain" />
             </div>
-            <div className="w-32 h-16">
+            <div className="w-28 h-16 md:w-32">
               <img src={shemaroo} alt="Shemaroo Logo" className="h-full object-contain" />
             </div>
-            <div className="w-32 h-16">
+            <div className="w-28 h-16 md:w-32">
               <img src={amra} alt="Amaravathi Logo" className="h-full object-contain" />
             </div>
           </div>
@@ -35,11 +35,11 @@ const Footer = () => {
           {/* Left Section - Logo and description */}
           <div className="mb-6 md:mb-0">
             {/* Replace the src with your MarkleTech logo */}
-            <img src={logo} alt="MarkleTech Logo" className="w-62 h-16 mb-4" />
-            <p className="text-gray-300 max-w-xs">
+            <img src={logo} alt="MarkleTech Logo" className="w-56 h-16 mb-4" />
+            <p className="text-gray-300 max-w-xs mx-auto md:mx-0">
               Subscribe to our newsletter and unlock a world of exclusive benefits. Be the first to know about our latest products, special promotions, and exciting updates.
             </p>
-            <div className="flex mt-4 space-x-4">
+            <div className="flex mt-4 space-x-4 justify-center md:justify-start">
               <a href="#" className="text-gray-400 hover:text-white">Facebook</a>
               <a href="#" className="text-gray-400 hover:text-white">Instagram</a>
               <a href="#" className="text-gray-400 hover:text-white">LinkedIn</a>
@@ -89,9 +89,9 @@ const Footer = () => {
         <hr className="border-t border-gray-500 mb-6" />
 
         {/* Footer Bottom - Single Line */}
-        <div className="flex justify-between items-center flex-wrap text-gray-400 space-y-4 md:space-y-0">
+        <div className="flex flex-col md:flex-row justify-between items-center flex-wrap text-gray-400 space-y-4 md:space-y-0">
           {/* Copyright text */}
-          <div>
+          <div className="text-center md:text-left">
             <p>Copyright © 2014 - 2024. All Rights Reserved by Markle Tech & Media Pvt. Ltd.</p>
           </div>
 
@@ -103,7 +103,7 @@ const Footer = () => {
           </div>
 
           {/* Social Media Icons */}
-          <div className="flex space-x-4">
+          <div className="flex space-x-4 justify-center md:justify-start">
             <a href="#" className="text-gray-400 hover:text-white">
               <FaFacebookF />
             </a>

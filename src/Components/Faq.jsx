@@ -37,7 +37,7 @@ const Faq = () => {
       question: "How much does outsourcing software development to India cost?",
       answer: (
         <div>
-          The cost of outsourcing software development depends on several factors such as the size and build of the application, the features & third-party integrations, APIs, animations, localizations, backend, cross-platform toolsets, platforms, etc. 
+          The cost of outsourcing software development depends on several factors such as the size and build of the application, the features & third-party integrations, APIs, animations, localizations, backend, cross-platform toolsets, platforms, etc.
           <p className="mt-2">
             If you share your basic idea, we can provide you with an ETA and estimated cost.
           </p>
@@ -59,7 +59,7 @@ const Faq = () => {
       question: "Do you work with startups and clients on a budget?",
       answer: (
         <div>
-          Yes, we work with startups. Since our establishment, we have worked with thousands of startups across the globe and become the proud partner in their success journey. We have built hundreds of Minimum Viable Products (MVPs) and scaled several startups to new heights. 
+          Yes, we work with startups. Since our establishment, we have worked with thousands of startups across the globe and become the proud partner in their success journey. We have built hundreds of Minimum Viable Products (MVPs) and scaled several startups to new heights.
           <p className="mt-2">
             Let us know your budget, and our experts will be happy to help you.
           </p>
@@ -85,7 +85,7 @@ const Faq = () => {
       question: "I want to outsource software development. What engagement options do you offer?",
       answer: (
         <div>
-          At Markle, we offer a variety of engagement models to suit your specific project requirements. 
+          At Markle, we offer a variety of engagement models to suit your specific project requirements.
           <ul className="list-disc ml-5 mt-2">
             <li><strong>Dedicated Team:</strong> A dedicated team model comprises a PM, SW Engineer, QA Engineer, and other roles defined for each specific project.</li>
             <li><strong>Staff Augmentation:</strong> We provide extra talent to boost your specific projects. This extended team works as a part of your local team, attending your daily meetings and reporting directly to your manager.</li>
@@ -140,23 +140,23 @@ const Faq = () => {
 
   return (
     <div className="w-full max-w-7xl mx-auto p-4 mt-20">
-      <h2 className="text-5xl text-purple-950 text-center mb-4">Frequently Asked Questions</h2>
-      <p className="text-center text-2xl mb-8 text-gray-500">
+      <h2 className="text-3xl md:text-4xl lg:text-5xl text-purple-950 mb-8 text-center">Frequently Asked Questions</h2>
+      <p className="text-center text-xl mb-8 text-gray-500">
         Here’s a list of FAQs that will help you to know more about MarkleTech.
       </p>
       {faqs.map((faq, index) => (
         <div key={index} className="mb-4">
           <div
-            className={`p-4 flex justify-between h-20 items-center rounded-t-lg cursor-pointer ${
+            className={`p-4 flex justify-between items-center rounded-t-lg cursor-pointer transition-colors duration-200 ease-in-out ${
               activeIndex === index ? 'bg-purple-950 text-white' : 'bg-purple-200'
             }`}
             onClick={() => toggleFaq(index)}
           >
-            <h3 className={`font-medium ${activeIndex === index ? 'text-white' : 'text-purple-950'}`}>
+            <h3 className={`font-medium text-base md:text-lg lg:text-xl ${activeIndex === index ? 'text-white' : 'text-purple-950'}`}>
               {faq.question}
             </h3>
             <button
-              className={`text-xl font-bold ${activeIndex === index ? 'text-white' : 'text-purple-600'}`}
+              className={`text-lg md:text-xl font-bold ${activeIndex === index ? 'text-white' : 'text-purple-600'}`}
             >
               {activeIndex === index ? '✕' : '+'}
             </button>

@@ -1,17 +1,18 @@
-import React from 'react'
-import aboutbg from "../assets/aboutbg.png"
+import React from 'react';
+import aboutbg from "../assets/aboutbg.png";
 
 const AboutData = () => {
   return (
-        <div className="container mx-auto px-4">
-      <div>
-        <img src={aboutbg} alt="Hero Frame" className="w-full mt-16" />
+    <div className="container mx-auto px-4">
+      <div className="mt-10">
+        <img src={aboutbg} alt="Hero Frame" className="w-full h-auto object-cover" />
       </div>
       <div>
+        {/* Placeholder for the second image, if needed */}
         {/* <img src={frame2} alt="Hero Frame" className="w-full mt-32" /> */}
       </div>
     </div>
-  )
+  );
 }
 
-export default AboutData
+export default AboutData;

@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import achievement from '../assets/achievement.png'
-import person1 from '../assets/testimonials/p1.png'
-import person2 from '../assets/testimonials/p2.png'
-import person3 from '../assets/testimonials/p3.png'
-import person4 from '../assets/testimonials/p4.png'
-import person5 from '../assets/testimonials/p5.png'
+import React, { useState, useEffect } from 'react';
+import achievement from '../assets/achievement.png';
+import person1 from '../assets/testimonials/p1.png';
+import person2 from '../assets/testimonials/p2.png';
+import person3 from '../assets/testimonials/p3.png';
+import person4 from '../assets/testimonials/p4.png';
+import person5 from '../assets/testimonials/p5.png';
 
 const Achievements = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -36,25 +36,27 @@ const Achievements = () => {
     }
   ];
 
-  const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => 
-      prev === testimonials.length - 1 ? 0 : prev + 1
-    );
-  };
+  // Automatically move to the next testimonial every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prev) => 
+        prev === testimonials.length - 1 ? 0 : prev + 1
+      );
+    }, 5000); // 5 seconds
 
-  const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => 
-      prev === 0 ? testimonials.length - 1 : prev - 1
-    );
-  };
+    // Clear interval on component unmount
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
 
   return (
-    <div className='container mx-auto px-4 py-16 flex flex-col items-center'>
-      <h1 className="text-5xl text-purple-950 mb-8">
-      Stories of Satisfaction
+    <div className='container mx-auto px-4 md:py-16 py-10 flex flex-col items-center'>
+      <h1 className="text-3xl md:text-4xl lg:text-5xl text-purple-950 mb-8 text-center">
+        Stories of Satisfaction
       </h1>
-      <p className="text-2xl max-w-5xl text-center text-gray-600 mb-12">
-      The team at Markle Tech and Media delivered outstanding results. Their strategic approach, technical expertise & attention to every detail sets them apart.      </p>
+      <p className="text-center text-xl mb-8 text-gray-500">
+        The team at Markle Tech and Media delivered outstanding results. Their strategic approach, technical expertise & attention to every detail sets them apart.
+      </p>
+      
       <div className="flex justify-center w-full max-w-7xl mb-20">
         <img 
           src={achievement} 
@@ -64,28 +66,28 @@ const Achievements = () => {
       </div>
 
       {/* New Testimonials Section */}
-      <div className="w-full max-w-7xl bg-purple-950 rounded-3xl p-8 flex relative">
-        {/* Left Side - Floating Avatars */}
-        <div className="w-1/2 relative min-h-[400px]">
+      <div className="w-full max-w-7xl bg-purple-950 rounded-3xl p-8 flex flex-col lg:flex-row relative">
+        {/* Left Side - Floating Avatars (hidden on small screens) */}
+        <div className="w-full lg:w-1/2 relative min-h-[400px] mb-8 lg:mb-0 hidden lg:block">
           <div className="absolute top-12 left-12">
-            <img src={person1} alt="" className="w-20 h-20 rounded-full border-4 border-yellow-400"/>
+            <img src={person1} alt="" className="w-16 h-16 md:w-20 md:h-20 rounded-full border-4 border-yellow-400"/>
           </div>
           <div className="absolute top-32 left-32">
-            <img src={person2} alt="" className="w-20 h-20 rounded-full border-4 border-yellow-400"/>
+            <img src={person2} alt="" className="w-16 h-16 md:w-20 md:h-20 rounded-full border-4 border-yellow-400"/>
           </div>
           <div className="absolute bottom-20 left-20">
-            <img src={person3} alt="" className="w-24 h-24 rounded-full border-4 border-purple-400"/>
+            <img src={person3} alt="" className="w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-purple-400"/>
           </div>
           <div className="absolute right-24 top-16">
-            <img src={person4} alt="" className="w-20 h-20 rounded-full border-4 border-blue-300"/>
+            <img src={person4} alt="" className="w-16 h-16 md:w-20 md:h-20 rounded-full border-4 border-blue-300"/>
           </div>
           <div className="absolute right-12 bottom-32">
-            <img src={person5} alt="" className="w-20 h-20 rounded-full border-4 border-yellow-400"/>
+            <img src={person5} alt="" className="w-16 h-16 md:w-20 md:h-20 rounded-full border-4 border-yellow-400"/>
           </div>
         </div>
 
         {/* Right Side - Testimonial Carousel */}
-        <div className="w-1/2 bg-white rounded-2xl p-8 relative">
+        <div className="w-full lg:w-1/2 bg-white rounded-2xl p-6 md:p-8 relative">
           {/* Rating Stars */}
           <div className="flex mb-4">
             {[...Array(testimonials[currentTestimonial].rating)].map((_, index) => (
@@ -96,14 +98,14 @@ const Achievements = () => {
           </div>
 
           {/* Testimonial Text */}
-          <p className="text-lg italic mb-8">"{testimonials[currentTestimonial].text}"</p>
+          <p className="text-lg md:text-xl italic mb-8">"{testimonials[currentTestimonial].text}"</p>
 
           {/* Author Info */}
           <div className="flex items-center">
             <img 
               src={testimonials[currentTestimonial].avatar} 
               alt={testimonials[currentTestimonial].author}
-              className="w-12 h-12 rounded-full mr-4"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full mr-4"
             />
             <div>
               <h4 className="font-semibold">{testimonials[currentTestimonial].author}</h4>
@@ -111,29 +113,12 @@ const Achievements = () => {
             </div>
           </div>
 
-          {/* Navigation Buttons */}
-          <div className="absolute bottom-8 right-8 flex gap-2">
-            <button 
-              onClick={prevTestimonial}
-              className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button 
-              onClick={nextTestimonial}
-              className="p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-          </div>
+          {/* Hide Navigation Buttons */}
+          {/* Navigation buttons are removed */}
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Achievements
+export default Achievements;

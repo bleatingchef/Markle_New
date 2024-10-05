@@ -7,7 +7,6 @@ import inter from '../assets/interface.png';
 import socialMedia from '../assets/socialMedia.png';
 import goal from '../assets/goal.png';
 
-
 const Recipe = () => {
   const services = [
     {
@@ -74,38 +73,50 @@ const Recipe = () => {
 
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8">
-      <h2 className="text-center text-5xl text-purple-950 mb-4">Our Recipe for Success</h2>
-      <p className="text-center text-2xl text-gray-500 mb-16">Our Toolbox of Advanced Technologies and Services</p>
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+      {/* Section Title */}
+      <h2 className="text-3xl md:text-4xl lg:text-5xl text-purple-950 mb-8 text-center">Our Recipe for Success</h2>
+      <p className="text-center text-xl mb-8 text-gray-500">Our Toolbox of Advanced Technologies and Services</p>
+      
+      {/* Services Grid */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
         {services.map((service) => (
           <div
             key={service.id}
-            className={`text-center p-8 bg-white rounded-lg hover:shadow-lg transition-all duration-300 ${service.borderGradient}`}
+            className={`text-center p-6 md:p-8 bg-white rounded-lg hover:shadow-lg transition-all duration-300 ${service.borderGradient}`}
           >
+            {/* Service Icon */}
             <div
-              className={`w-16 h-16 mx-auto rounded-full flex items-center justify-center ${service.bgGradient} mb-6`}
+              className={`w-12 h-12 md:w-16 md:h-16 mx-auto rounded-full flex items-center justify-center ${service.bgGradient} mb-4 md:mb-6`}
             >
-              <img src={service.icon} alt={`${service.title} icon`} className="w-10 h-10" />
+              <img src={service.icon} alt={`${service.title} icon`} className="w-8 h-8 md:w-10 md:h-10" />
             </div>
-            <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
+            
+            {/* Service Title */}
+            <h3 className="text-lg md:text-xl font-semibold text-gray-900">{service.title}</h3>
+            
+            {/* Service Description */}
             <p className="mt-2 text-gray-600">{service.description}</p>
             <p className="mt-4 text-gray-500">{service.details}</p>
-
           </div>
         ))}
       </div>
-      <div className='flex'>
-      {/* <img src={eclipse} alt="" className=''/> */}
 
-
-      </div>
-      <div className="text-center mt-12">
+      {/* Load More Button */}
+      <div className="text-center mt-6">
         <button className="bg-gray-200 text-purple-700 font-semibold px-6 py-2 rounded-full hover:bg-gray-300 transition">
           Load More <span className="text-purple-600">+</span>
         </button>
       </div>
-      <img src={goal} alt="" className='ml-40' style={{width:"1500px", height:"500px"}}/>
 
+      {/* Bottom Image */}
+      <div className="mt-8 flex justify-center">
+        <img 
+          src={goal} 
+          alt="Goal" 
+          className="w-full sm:w-3/4 lg:w-2/3 xl:w-1/2 h-auto" 
+          style={{ maxHeight: '500px' }}
+        />
+      </div>
     </div>
   );
 };

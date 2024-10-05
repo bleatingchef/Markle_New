@@ -42,13 +42,13 @@ const Next_Gen = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+    <div className="max-w-7xl mx-auto py-1 px-4 sm:px-6 lg:px-8">
       {/* Header Section */}
       <div className="text-center mb-16">
-        <h1 className="text-5xl text-purple-950 mb-8">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl text-purple-950 mb-8 text-center">
           Next-Gen Technology Solutions For Every Business
         </h1>
-        <p className="text-2xl text-gray-600 mx-auto">
+        <p className="text-center text-xl mb-8 text-gray-500">
           We are empowering businesses of all sizes to achieve digital dominance that propels you to
           the forefront of your industry to ensure long-term success. We offer tailored strategies for
           limitless growth.
@@ -56,7 +56,7 @@ const Next_Gen = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-col md:flex-row gap-12">
+      <div className="flex flex-col md:flex-row gap-8 md:gap-12">
         {/* Left Side - Categories */}
         <div className="md:w-1/3">
           {categories.map((category) => (
@@ -74,16 +74,16 @@ const Next_Gen = () => {
           ))}
         </div>
 
-        {/* Right Side - Single Image */}
+        {/* Right Side - Image Section */}
         <div className="md:w-2/3">
           <div className="flex justify-center items-center">
             {categories.find(cat => cat.name === selectedCategory) && (
-              <div className="p-4 pl-20">
+              <div className="p-4">
                 <img
                   src={categories.find(cat => cat.name === selectedCategory)?.image}
                   alt={`${selectedCategory} technology`}
-                  className="  object-contain"
-                  style={{width:"600px",height:"350px"}}
+                  className="object-contain"
+                  style={{ width: '100%', maxWidth: '600px', height: 'auto' }}
                 />
               </div>
             )}

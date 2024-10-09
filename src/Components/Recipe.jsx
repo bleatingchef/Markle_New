@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import web from '../assets/web.png';
 import ecomm from '../assets/ecomm.png';
 import app from '../assets/app.png';
@@ -8,7 +8,9 @@ import socialMedia from '../assets/socialMedia.png';
 import goal from '../assets/goal.png';
 
 const Recipe = () => {
-  const services = [
+  const [hoveredCard, setHoveredCard] = useState(null);
+
+  const primaryServices = [
     {
       id: 1,
       title: 'Web',
@@ -71,6 +73,101 @@ const Recipe = () => {
     },
   ];
 
+  const hoverServices = [
+    {
+      id: 7,
+      title: 'SaaS Product',
+      description: 'Lorem ipsum dolor sit amet.',
+      details:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.',
+      icon: web,
+      bgGradient: 'bg-gradient-to-r from-blue-600 to-blue-500',
+      borderGradient: 'hover:border-t-4 hover:border-t-blue-500',
+    },
+    {
+      id: 8,
+      title: 'Low Code/No Code',
+      description: 'Lorem ipsum dolor sit amet.',
+      details:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.',
+      icon: ecomm,
+      bgGradient: 'bg-gradient-to-r from-indigo-600 to-indigo-500',
+      borderGradient: 'hover:border-t-4 hover:border-t-indigo-500',
+    },
+    {
+      id: 9,
+      title: 'IT Consulting Service',
+      description: 'Lorem ipsum dolor sit amet.',
+      details:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.',
+      icon: app,
+      bgGradient: 'bg-gradient-to-r from-blue-700 to-blue-600',
+      borderGradient: 'hover:border-t-4 hover:border-t-blue-600',
+    },
+    {
+      id: 10,
+      title: 'Digital Marketing',
+      description: 'Lorem ipsum dolor sit amet.',
+      details:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.',
+      icon: software,
+      bgGradient: 'bg-gradient-to-r from-purple-700 to-purple-500',
+      borderGradient: 'hover:border-t-4 hover:border-t-purple-500',
+    },
+    {
+      id: 11,
+      title: 'MVP Development',
+      description: 'Lorem ipsum dolor sit amet.',
+      details:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.',
+      icon: inter,
+      bgGradient: 'bg-gradient-to-r from-pink-600 to-pink-500',
+      borderGradient: 'hover:border-t-4 hover:border-t-pink-500',
+    },
+    {
+      id: 12,
+      title: 'DevOps Consulting',
+      description: 'Lorem ipsum dolor sit amet.',
+      details:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.',
+      icon: socialMedia,
+      bgGradient: 'bg-gradient-to-r from-green-600 to-green-500',
+      borderGradient: 'hover:border-t-4 hover:border-t-green-500',
+    },
+  ];
+
+  const getServiceContent = (service, index) => {
+    // Show content based on hover state
+    if (hoveredCard === service.id) {
+      const hoverService = hoverServices[index];
+      return (
+        <>
+          <div
+            className={`w-12 h-12 md:w-16 md:h-16 mx-auto rounded-full flex items-center justify-center ${hoverService.bgGradient} mb-4 md:mb-6`}
+          >
+            <img src={hoverService.icon} alt={`${hoverService.title} icon`} className="w-8 h-8 md:w-10 md:h-10" />
+          </div>
+          <h3 className="text-lg md:text-xl font-semibold text-gray-900">{hoverService.title}</h3>
+          <p className="mt-2 text-gray-600">{hoverService.description}</p>
+          <p className="mt-4 text-gray-500">{hoverService.details}</p>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <div
+            className={`w-12 h-12 md:w-16 md:h-16 mx-auto rounded-full flex items-center justify-center ${service.bgGradient} mb-4 md:mb-6`}
+          >
+            <img src={service.icon} alt={`${service.title} icon`} className="w-8 h-8 md:w-10 md:h-10" />
+          </div>
+          <h3 className="text-lg md:text-xl font-semibold text-gray-900">{service.title}</h3>
+          <p className="mt-2 text-gray-600">{service.description}</p>
+          <p className="mt-4 text-gray-500">{service.details}</p>
+        </>
+      );
+    }
+  };
+
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8">
       {/* Section Title */}
@@ -79,33 +176,16 @@ const Recipe = () => {
       
       {/* Services Grid */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-        {services.map((service) => (
+        {primaryServices.map((service, index) => (
           <div
             key={service.id}
             className={`text-center p-6 md:p-8 bg-white rounded-lg hover:shadow-lg transition-all duration-300 ${service.borderGradient}`}
+            onMouseEnter={() => setHoveredCard(service.id)}
+            onMouseLeave={() => setHoveredCard(null)}
           >
-            {/* Service Icon */}
-            <div
-              className={`w-12 h-12 md:w-16 md:h-16 mx-auto rounded-full flex items-center justify-center ${service.bgGradient} mb-4 md:mb-6`}
-            >
-              <img src={service.icon} alt={`${service.title} icon`} className="w-8 h-8 md:w-10 md:h-10" />
-            </div>
-            
-            {/* Service Title */}
-            <h3 className="text-lg md:text-xl font-semibold text-gray-900">{service.title}</h3>
-            
-            {/* Service Description */}
-            <p className="mt-2 text-gray-600">{service.description}</p>
-            <p className="mt-4 text-gray-500">{service.details}</p>
+            {getServiceContent(service, index)}
           </div>
         ))}
-      </div>
-
-      {/* Load More Button */}
-      <div className="text-center mt-6">
-        <button className="bg-gray-200 text-purple-700 font-semibold px-6 py-2 rounded-full hover:bg-gray-300 transition">
-          Load More <span className="text-purple-600">+</span>
-        </button>
       </div>
 
       {/* Bottom Image */}

@@ -35,7 +35,7 @@ const Footer = () => {
           {/* Left Section - Logo and description */}
           <div className="mb-6 md:mb-0">
             {/* Replace the src with your MarkleTech logo */}
-            <img src={logo} alt="MarkleTech Logo" className="w-56 h-16 mb-4" />
+            <img src={logo} alt="MarkleTech Logo" className="w-90 h-16 mb-4" />
             <p className="text-gray-300 max-w-xs mx-auto md:mx-0">
               Subscribe to our newsletter and unlock a world of exclusive benefits. Be the first to know about our latest products, special promotions, and exciting updates.
             </p>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaBars, FaTimes, FaInstagram, FaFacebook, FaLinkedin, FaYoutube } from 'react-icons/fa';
+import { FaBars, FaTimes, FaInstagram, FaFacebook, FaLinkedin, FaYoutube, FaCaretDown } from 'react-icons/fa'; // Import the caret down icon
+import dropimage from "../assets/dropimage.png"; // Import the dropdown image
 
 // Import logo image
 import logo from '../assets/logoblack.png';
@@ -8,7 +9,6 @@ import logo from '../assets/logoblack.png';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State for controlling the dropdown
-
   const dropdownRef = useRef(null); // Reference to the dropdown menu
 
   // Toggle the main burger menu
@@ -38,8 +38,8 @@ const Navbar = () => {
   // Define navItems with no background images
   const navItems = [
     {
-      path: '/about', 
-      label: 'About', 
+      path: '/about',
+      label: 'About',
       dropdown: [
         { path: '/about/company', label: 'About Company' },
         { path: '/about/mission', label: 'Mission' },
@@ -108,7 +108,7 @@ const Navbar = () => {
             </button>
 
             {/* Desktop navigation */}
-            <div className="hidden md:flex items-center space-x-6">
+            <div className="hidden md:flex items-center">
               {navItems.map((item) => (
                 <div key={item.path} className="relative group right-[0px] font-semibold text-md">
                   {/* Main nav item */}
@@ -116,24 +116,29 @@ const Navbar = () => {
                     <div className="relative" ref={dropdownRef}>
                       <button
                         onClick={toggleDropdown}
-                        className="relative px-3 py-2 transition-colors duration-200 text-gray-700 hover:text-blue-600"
+                        className="relative px-3 py-2 transition-colors duration-200 text-gray-700 hover:text-blue-600 flex items-center"
                       >
                         {item.label}
+                        <FaCaretDown className="ml-1" /> {/* Dropdown arrow icon */}
                       </button>
 
                       {/* Dropdown menu */}
                       {isDropdownOpen && (
-                        <div className="absolute left-0 mt-2 bg-white border border-gray-200 shadow-xl rounded-3xl z-10 p-6 grid grid-cols-2 gap-8 w-[700px]">
-                          {item.dropdown.map((subItem) => (
-                            <NavLink
-                              key={subItem.path}
-                              to={subItem.path}
-                              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600"
-                              onClick={() => setIsDropdownOpen(false)} // Close dropdown when a link is clicked
-                            >
-                              {subItem.label}
-                            </NavLink>
-                          ))}
+                        <div className="absolute left-0 mt-2 bg-white border border-gray-200 shadow-xl rounded-3xl z-10 p-6 w-[700px] flex">
+                          {/* Image on the left side */}
+                          <img src={dropimage} alt="Dropdown Graphic" className="w-24 h-24 mr-4" />
+                          <div className="grid grid-cols-2 gap-8">
+                            {item.dropdown.map((subItem) => (
+                              <NavLink
+                                key={subItem.path}
+                                to={subItem.path}
+                                className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600"
+                                onClick={() => setIsDropdownOpen(false)} // Close dropdown when a link is clicked
+                              >
+                                {subItem.label}
+                              </NavLink>
+                            ))}
+                          </div>
                         </div>
                       )}
                     </div>
@@ -168,16 +173,32 @@ const Navbar = () => {
                 {/* Dropdown for mobile view */}
                 {item.dropdown && (
                   <div className="pl-4 space-y-2">
-                    {item.dropdown.map((subItem) => (
-                      <NavLink
-                        key={subItem.path}
-                        to={subItem.path}
-                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600"
-                        onClick={() => setIsOpen(false)}
+                    {/* Dropdown button for mobile */}
+                    <div className="relative">
+                      <button
+                        onClick={toggleDropdown}
+                        className="flex items-center"
                       >
-                        {subItem.label}
-                      </NavLink>
-                    ))}
+                        <img src={dropimage} alt="Dropdown Graphic" className="w-16 h-16 mr-2" /> {/* Image for mobile */}
+                        <span className="text-gray-700 hover:text-blue-600">{item.label} <FaCaretDown className="ml-1" /></span> {/* Dropdown arrow icon */}
+                      </button>
+
+                      {/* Dropdown menu for mobile */}
+                      {isDropdownOpen && (
+                        <div className="absolute left-0 mt-2 bg-white border border-gray-200 shadow-xl rounded-3xl z-10 p-4 w-full flex flex-col">
+                          {item.dropdown.map((subItem) => (
+                            <NavLink
+                              key={subItem.path}
+                              to={subItem.path}
+                              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600"
+                              onClick={() => setIsDropdownOpen(false)} // Close dropdown when a link is clicked
+                            >
+                              {subItem.label}
+                            </NavLink>
+                          ))}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 )}
               </div>

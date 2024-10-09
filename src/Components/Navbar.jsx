@@ -110,7 +110,7 @@ const Navbar = () => {
             {/* Desktop navigation */}
             <div className="hidden md:flex items-center space-x-6">
               {navItems.map((item) => (
-                <div key={item.path} className="relative group right-[0px] font-semibold text-xl">
+                <div key={item.path} className="relative group right-[0px] font-semibold text-md">
                   {/* Main nav item */}
                   {item.dropdown ? (
                     <div className="relative" ref={dropdownRef}>

@@ -4,7 +4,7 @@ import missionright from "../assets/missionright.png";
 
 const Mission = () => {
   return (
-    <div className="bg-white p-8 max-w-7xl mx-auto">
+    <div className="bg-white p-8 max-w-7xl mx-auto mt-20">
       {/* <div className="text-center mb-8">
         <h2 className="text-3xl text-blue-600 uppercase font-semibold mb-2">THE FUTURE BELONGS TO YOU</h2>
         <h1 className="text-4xl font-bold text-blue-700 mb-2">Mission</h1>

@@ -58,7 +58,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-50 shadow-md bg-white">
+      <nav className="fixed w-full z-50 "> {/* Make background transparent and blur */}
         {/* Top section with contact info */}
         <div className="hidden md:block bg-purple-950 text-white">
           <div className="container mx-auto px-4">
@@ -91,7 +91,7 @@ const Navbar = () => {
         </div>
 
         {/* Main navbar */}
-        <div className="bg-white">
+        <div className="bg-transparent ml-20 mr-20 rounded-3xl backdrop-blur-lg"> {/* Transparent with blur */}
           <div className="container mx-auto px-4">
             <div className="flex justify-between items-center py-4">
               {/* Logo */}
@@ -109,7 +109,7 @@ const Navbar = () => {
               </button>
 
               {/* Desktop navigation */}
-              <div className="hidden md:flex items-center">
+              <div className="hidden md:flex items-center mt-8">
                 {navItems.map((item) => (
                   <div key={item.path} className="relative group right-[0px] font-semibold text-md">
                     {/* Main nav item */}
@@ -138,10 +138,15 @@ const Navbar = () => {
                                 >
                                   {subItem.label}
                                 </NavLink>
+                                
                               ))}
+                              
                             </div>
+                            
                           </div>
+                          
                         )}
+                        
                       </div>
                     ) : (
                       <NavLink
@@ -153,59 +158,65 @@ const Navbar = () => {
                     )}
                   </div>
                 ))}
+                
               </div>
             </div>
 
-            {/* Mobile navigation */}
-            <div
-              className={`md:hidden ${isOpen ? 'block' : 'hidden'} py-2 space-y-2 bg-white`}
-            >
-              {navItems.map((item) => (
-                <div key={item.path}>
-                  {/* Main mobile nav item */}
-                  <NavLink
-                    to={item.path}
-                    className={({ isActive }) => `block px-4 py-2 transition-colors duration-200 ${isActive ? 'text-blue-600 bg-gray-50' : 'text-gray-700 hover:bg-gray-100 hover:text-blue-600'}`}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.label}
-                  </NavLink>
-
-                  {/* Dropdown for mobile view */}
-                  {item.dropdown && (
-                    <div className="pl-4 space-y-2">
-                      {/* Dropdown button for mobile */}
-                      <div className="relative">
-                        <button
-                          onClick={toggleDropdown}
-                          className="flex items-center"
-                        >
-                          <img src={dropimage} alt="Dropdown Graphic" className="w-16 h-16 mr-2" /> {/* Image for mobile */}
-                          <span className="text-gray-700 hover:text-blue-600">{item.label} <FaCaretDown className="ml-1" /></span> {/* Dropdown arrow icon */}
-                        </button>
-
-                        {/* Dropdown menu for mobile */}
-                        {isDropdownOpen && (
-                          <div className="absolute left-0 mt-2 bg-white border border-gray-200 shadow-xl rounded-3xl z-10 p-4 w-full flex flex-col">
-                            {item.dropdown.map((subItem) => (
-                              <NavLink
-                                key={subItem.path}
-                                to={subItem.path}
-                                className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600"
-                                onClick={() => setIsDropdownOpen(false)} // Close dropdown when a link is clicked
-                              >
-                                {subItem.label}
-                              </NavLink>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
+            {/* Move the <h1> directly after the navbar items and inside the blurred section */}
+            <h1 className='mt- pb-5 font-semibold text-center md:text-lg text-xs text-blue-950'>
+              Don't Wait! Download The Specific Modules Marketing Deck Today! Download Now!
+            </h1>
           </div>
+        </div>
+
+        {/* Mobile navigation */}
+        <div
+          className={`md:hidden ${isOpen ? 'block' : 'hidden'} py-2 space-y-2 bg-white`}
+        >
+          {navItems.map((item) => (
+            <div key={item.path}>
+              {/* Main mobile nav item */}
+              <NavLink
+                to={item.path}
+                className={({ isActive }) => `block px-4 py-2 transition-colors duration-200 ${isActive ? 'text-blue-600 bg-gray-50' : 'text-gray-700 hover:bg-gray-100 hover:text-blue-600'}`}
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </NavLink>
+
+              {/* Dropdown for mobile view */}
+              {item.dropdown && (
+                <div className="pl-4 space-y-2">
+                  {/* Dropdown button for mobile */}
+                  <div className="relative">
+                    <button
+                      onClick={toggleDropdown}
+                      className="flex items-center"
+                    >
+                      <img src={dropimage} alt="Dropdown Graphic" className="w-16 h-16 mr-2" /> {/* Image for mobile */}
+                      <span className="text-gray-700 hover:text-blue-600">{item.label} <FaCaretDown className="ml-1" /></span> {/* Dropdown arrow icon */}
+                    </button>
+
+                    {/* Dropdown menu for mobile */}
+                    {isDropdownOpen && (
+                      <div className="absolute left-0 mt-2 bg-white border border-gray-200 shadow-xl rounded-3xl z-10 p-4 w-full flex flex-col">
+                        {item.dropdown.map((subItem) => (
+                          <NavLink
+                            key={subItem.path}
+                            to={subItem.path}
+                            className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600"
+                            onClick={() => setIsDropdownOpen(false)} // Close dropdown when a link is clicked
+                          >
+                            {subItem.label}
+                          </NavLink>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </nav>
 

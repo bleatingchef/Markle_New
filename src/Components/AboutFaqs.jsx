@@ -374,7 +374,7 @@ const AboutFaqs = () => {
         </div>
 
         <h1 className='text-3xl md:text-4xl lg:text-5xl text-purple-950 mb-16 mt-36 ml-[275px]'>
-          Quality Assurance
+          Service Quality
         </h1>
         <div className='w-full max-w-7xl space-y-4 mx-auto'>
           {qualityFaqs.map((faq, index) => (
@@ -405,7 +405,7 @@ const AboutFaqs = () => {
         </div>
 
         <h1 className='text-3xl md:text-4xl lg:text-5xl text-purple-950 mb-16 mt-36 ml-[275px]'>
-          Intellectual Property
+          Intellectual Property and Security
         </h1>
         <div className='w-full max-w-7xl space-y-4 mx-auto mb-20'>
           {intellectualFaqs.map((faq, index) => (

@@ -13,6 +13,7 @@ import Footer from "./Components/Footer";
 import AboutMission_com from "./pages/AboutMission_com";
 import AboutClientReview_com from "./pages/AboutClientReview_com";
 import AboutFaq_com from "./pages/AboutFaq_com";
+import BecomeOurAgent_com from "./pages/BecomeOurAgent_com";
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
       <Route path='/about/mission' element={<AboutMission_com/>}/>
       <Route path='/about/client-reviews' element={<AboutClientReview_com/>}/>
       <Route path='/about/faq' element={<AboutFaq_com/>}/>
+      <Route path='/about/become-our-agent' element={<BecomeOurAgent_com/>}/>
       <Route path='/service' element={<Service_com/>}/>
       <Route path='/industry' element={<Industry_com/>}/>
       <Route path='/solution' element={<Solution_com/>}/>

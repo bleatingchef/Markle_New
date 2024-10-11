@@ -13,37 +13,37 @@ const Recipe = () => {
   const primaryServices = [
     {
       id: 1,
-      title: 'Web',
+      title: 'Software Development',
       description: 'React, VueJS, NextJS, Angular, NodeJS, Laravel',
       details:
         'Delivering custom web solutions that are fast, secure and designed to boost your digital journey.',
       icon: web,
-      bgGradient: 'bg-gradient-to-r from-blue-600 to-blue-500',
-      borderGradient: 'hover:border-t-4 hover:border-t-blue-500',
+      bgGradient: 'bg-gradient-to-r from-blue-500 to-blue-600',
+      borderGradient: 'hover:border-t-4 hover:border-t-blue-600',
     },
     {
       id: 2,
-      title: 'Ecommerce',
+      title: 'E-Commerce',
       description: 'Magento, Shopify',
       details:
         'Crafting custom e-commerce websites that drive sales, enhance user experience and secure online transactions.',
       icon: ecomm,
-      bgGradient: 'bg-gradient-to-r from-indigo-600 to-indigo-500',
-      borderGradient: 'hover:border-t-4 hover:border-t-indigo-500',
+      bgGradient: 'bg-gradient-to-r from-indigo-500 to-indigo-600',
+      borderGradient: 'hover:border-t-4 hover:border-t-indigo-600',
     },
     {
       id: 3,
-      title: 'App',
+      title: 'Testing & QA',
       description: 'React Native, Flutter',
       details:
         'Building scalable & secure apps with customized features, ensuring smooth user experience and driving growth.',
       icon: app,
-      bgGradient: 'bg-gradient-to-r from-blue-700 to-blue-600',
-      borderGradient: 'hover:border-t-4 hover:border-t-blue-600',
+      bgGradient: 'bg-gradient-to-r from-purple-700 to-purple-800',
+      borderGradient: 'hover:border-t-4 hover:border-t-purple-800',
     },
     {
       id: 4,
-      title: 'Software',
+      title: 'Testing & QA',
       description: 'Electron.js',
       details:
         'Crafting tailored software systems that solve complex challenges, automate tasks & achieve business efficiency.',
@@ -53,7 +53,7 @@ const Recipe = () => {
     },
     {
       id: 5,
-      title: 'Interface Design',
+      title: 'UI / UX Design',
       description: 'React, Angular, NodeJS',
       details:
         'Designing interfaces that are both beautiful & easily accessible ensuring user satisfaction at every scroll.',
@@ -63,7 +63,7 @@ const Recipe = () => {
     },
     {
       id: 6,
-      title: 'Social Media',
+      title: 'Web Development',
       description: 'Facebook, Instagram, YouTube',
       details:
         'Elevating your brand with strategic social media management, content creation and targeted campaigning.',
@@ -77,7 +77,7 @@ const Recipe = () => {
     {
       id: 7,
       title: 'SaaS Product',
-      description: 'Lorem ipsum dolor sit amet.',
+      description: 'React, Angular, Node Js',
       details:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.',
       icon: web,
@@ -87,7 +87,7 @@ const Recipe = () => {
     {
       id: 8,
       title: 'Low Code/No Code',
-      description: 'Lorem ipsum dolor sit amet.',
+      description: 'Magento, Shopify',
       details:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.',
       icon: ecomm,
@@ -97,17 +97,17 @@ const Recipe = () => {
     {
       id: 9,
       title: 'IT Consulting Service',
-      description: 'Lorem ipsum dolor sit amet.',
+      description: 'React Native, Flutter',
       details:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.',
       icon: app,
-      bgGradient: 'bg-gradient-to-r from-blue-700 to-blue-600',
+      bgGradient: 'bg-gradient-to-r from-purple-700 to-purple-800',
       borderGradient: 'hover:border-t-4 hover:border-t-blue-600',
     },
     {
       id: 10,
       title: 'Digital Marketing',
-      description: 'Lorem ipsum dolor sit amet.',
+      description: 'Electron.Js',
       details:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.',
       icon: software,
@@ -117,7 +117,7 @@ const Recipe = () => {
     {
       id: 11,
       title: 'MVP Development',
-      description: 'Lorem ipsum dolor sit amet.',
+      description: 'React, Angular, Node Js',
       details:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.',
       icon: inter,
@@ -127,7 +127,7 @@ const Recipe = () => {
     {
       id: 12,
       title: 'DevOps Consulting',
-      description: 'Lorem ipsum dolor sit amet.',
+      description: 'React, Angular, Node Js',
       details:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.',
       icon: socialMedia,

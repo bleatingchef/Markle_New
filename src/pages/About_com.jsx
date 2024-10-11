@@ -4,6 +4,7 @@ import AboutData from '../Components/AboutData'
 import Welcome from '../Components/Welcome'
 import About_Recipe from '../Components/About_Recipe'
 import AboutTestimonials from '../Components/AboutTestimonials'
+import DateWiseAboutCompany from '../Components/DateWiseAboutCompany'
 
 const About_com = () => {
   return (
@@ -11,7 +12,8 @@ const About_com = () => {
         <AboutData/>
         <Welcome/>
         <About_Recipe/>
-        <AboutTestimonials/>
+        <DateWiseAboutCompany/>
+        {/* <AboutTestimonials/> */}
     </div>
   )
 }

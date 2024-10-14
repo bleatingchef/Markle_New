@@ -15,6 +15,10 @@ import AboutClientReview_com from "./pages/AboutClientReview_com";
 import AboutFaq_com from "./pages/AboutFaq_com";
 import BecomeOurAgent_com from "./pages/BecomeOurAgent_com";
 import Career from "./Components/Career";
+import ServiceApp from "./pages/ServiceApp";
+import ServicesTestAndQa from "./pages/ServicesTestAndQa";
+import ServicesUI from "./pages/ServicesUI";
+import AllServices from "./pages/AllServices";
 
 function App() {
 
@@ -32,10 +36,15 @@ function App() {
       <Route path='/about/become-our-agent' element={<BecomeOurAgent_com/>}/>
       <Route path='/about/careers' element={<Career/>}/>
       <Route path='/service' element={<Service_com/>}/>
+      <Route path='/service/mobile-app-development' element={<ServiceApp/>}/>
+      <Route path="/service/testing-and-qa" element={<ServicesTestAndQa/>}/>
+      <Route path='/service/ui-ux-design' element={<ServicesUI/>}/>
+      <Route path='/service/all-services' element={<AllServices/>}/>
       <Route path='/industry' element={<Industry_com/>}/>
       <Route path='/solution' element={<Solution_com/>}/>
       <Route path='/pricing' element={<Pricing_com/>}/>
       <Route path='/contactus' element={<ContactUs_com/>}/>
+
         
       </Routes>
       <Footer/>

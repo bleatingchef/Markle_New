@@ -1,19 +1,22 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaBars, FaTimes, FaInstagram, FaFacebook, FaLinkedin, FaYoutube, FaCaretDown } from 'react-icons/fa'; // Import the caret down icon
-import dropimage from "../assets/dropimage.png"; // Import the dropdown image
+import { FaBars, FaTimes, FaInstagram, FaFacebook, FaLinkedin, FaYoutube, FaCaretDown } from 'react-icons/fa'; 
+import dropimage from "../assets/dropimage.png"; 
 import logo from '../assets/logoblack.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef(null); // Reference to the dropdown menu
+  const [activeDropdown, setActiveDropdown] = useState(null); // Manage which dropdown is active on mobile
+  const dropdownRef = useRef(null);
 
-  // Toggle the main burger menu
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  // Define navItems with dropdowns
+  const handleDropdownClick = (index) => {
+    setActiveDropdown(activeDropdown === index ? null : index); // Toggle dropdown
+  };
+
   const navItems = [
     {
       path: '/about',
@@ -45,7 +48,6 @@ const Navbar = () => {
         { path: '/service/all-services', label: 'See All Services' },
       ],
     },
-    
     { path: '/industry', label: 'Industries' },
     { path: '/solution', label: 'Solutions' },
     { path: '/pricing', label: 'Pricing' },
@@ -54,7 +56,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-50 shadow-md bg-white">
+      <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
         {/* Top section with contact info */}
         <div className="hidden md:block bg-purple-950 text-white">
           <div className="container mx-auto px-4">
@@ -106,11 +108,8 @@ const Navbar = () => {
 
               {/* Desktop navigation */}
               <div className="hidden md:flex items-center">
-                {navItems.map((item) => (
-                  <div
-                    key={item.path}
-                    className="relative group right-[0px] font-semibold text-md"
-                  >
+                {navItems.map((item, index) => (
+                  <div key={item.path} className="relative group font-semibold text-md">
                     {/* Main nav item */}
                     {item.dropdown ? (
                       <div className="relative" ref={dropdownRef}>
@@ -119,12 +118,11 @@ const Navbar = () => {
                           className="relative px-3 py-2 transition-colors duration-200 text-gray-700 hover:text-blue-600 flex items-center"
                         >
                           {item.label}
-                          <FaCaretDown className="ml-1" /> {/* Dropdown arrow icon */}
+                          <FaCaretDown className="ml-1" />
                         </NavLink>
 
                         {/* Dropdown menu on hover */}
                         <div className="absolute left-0 mt-2 bg-white border border-gray-200 shadow-xl rounded-3xl z-10 p-6 w-[700px] hidden group-hover:flex">
-                          {/* Image on the left side */}
                           <img src={dropimage} alt="Dropdown Graphic" className="w-24 h-24 mr-4" />
                           <div className="grid grid-cols-2 gap-8">
                             {item.dropdown.map((subItem) => (
@@ -158,7 +156,7 @@ const Navbar = () => {
 
             {/* Mobile navigation */}
             <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} py-2 space-y-2 bg-white`}>
-              {navItems.map((item) => (
+              {navItems.map((item, index) => (
                 <div key={item.path}>
                   {/* Main mobile nav item */}
                   <NavLink
@@ -176,33 +174,31 @@ const Navbar = () => {
                   {/* Dropdown for mobile view */}
                   {item.dropdown && (
                     <div className="pl-4 space-y-2">
-                      {/* Dropdown button for mobile */}
                       <div className="relative">
-                        <button className="flex items-center">
-                          <img
-                            src={dropimage}
-                            alt="Dropdown Graphic"
-                            className="w-16 h-16 mr-2"
-                          />{' '}
-                          {/* Image for mobile */}
-                          <span className="text-gray-700 hover:text-blue-600">
-                            {item.label} <FaCaretDown className="ml-1" />
-                          </span>{' '}
-                          {/* Dropdown arrow icon */}
+                        <button
+                          className="flex items-center justify-between w-full py-2"
+                          onClick={() => handleDropdownClick(index)}
+                        >
+                          <img src={dropimage} alt="Dropdown Graphic" className="w-12 h-12 mr-2" />
+                          <span className="text-gray-700 hover:text-blue-600">{item.label}</span>
+                          <FaCaretDown className="ml-1" />
                         </button>
 
                         {/* Dropdown menu for mobile */}
-                        <div className="absolute left-0 mt-2 bg-white border border-gray-200 shadow-xl rounded-3xl z-10 p-4 w-full flex flex-col">
-                          {item.dropdown.map((subItem) => (
-                            <NavLink
-                              key={subItem.path}
-                              to={subItem.path}
-                              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600"
-                            >
-                              {subItem.label}
-                            </NavLink>
-                          ))}
-                        </div>
+                        {activeDropdown === index && (
+                          <div className="mt-2 bg-white border border-gray-200 shadow-xl rounded-3xl z-10 p-4">
+                            {item.dropdown.map((subItem) => (
+                              <NavLink
+                                key={subItem.path}
+                                to={subItem.path}
+                                className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-blue-600"
+                                onClick={() => setIsOpen(false)} // Close menu on click
+                              >
+                                {subItem.label}
+                              </NavLink>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     </div>
                   )}
@@ -211,6 +207,9 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+
+        {/* Blinking download message */}
+        <p className="text-center blinking py-4">Don't Wait! Download The Specific Modules Marketing Deck Today! Download Now!</p>
       </nav>
 
       {/* Add padding to the top of the content to prevent overlap */}

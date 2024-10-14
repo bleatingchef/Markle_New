@@ -5,6 +5,11 @@ import app from '../assets/app.png';
 import software from '../assets/software.png';
 import inter from '../assets/interface.png';
 import socialMedia from '../assets/socialMedia.png';
+import saas from '../assets/saas.png';
+import mvp from '../assets/mvp.png';
+import devops from '../assets/devops.png';
+import digital from '../assets/digital.png';
+import lowcode from '../assets/lowcode.png';
 
 const AboutRecipe = () => {
   // Creating 12 separate service cards
@@ -68,7 +73,7 @@ const AboutRecipe = () => {
       title: 'SaaS Product Development',
       description: 'React, Angular, Node.js',
       details: 'Building SaaS solutions with scalability, performance, and reliability, tailored to your business needs.',
-      icon: web,
+      icon: saas,
       bgGradient: 'bg-gradient-to-r from-blue-600 to-blue-500',
       borderGradient: 'hover:border-t-4 hover:border-t-blue-500',
     },
@@ -77,7 +82,7 @@ const AboutRecipe = () => {
       title: 'Low Code/No Code Solutions',
       description: 'OutSystems, Mendix',
       details: 'Create powerful applications quickly and efficiently with low code/no code platforms.',
-      icon: ecomm,
+      icon: lowcode,
       bgGradient: 'bg-gradient-to-r from-indigo-600 to-indigo-500',
       borderGradient: 'hover:border-t-4 hover:border-t-indigo-500',
     },
@@ -95,7 +100,7 @@ const AboutRecipe = () => {
       title: 'Digital Marketing Solutions',
       description: 'SEO, SEM, Social Media',
       details: 'Helping businesses grow with tailored digital marketing strategies and a focus on ROI.',
-      icon: software,
+      icon: digital,
       bgGradient: 'bg-gradient-to-r from-purple-700 to-purple-500',
       borderGradient: 'hover:border-t-4 hover:border-t-purple-500',
     },
@@ -104,7 +109,7 @@ const AboutRecipe = () => {
       title: 'MVP Development',
       description: 'React, Angular, Node.js',
       details: 'Building Minimum Viable Products (MVPs) for startups and enterprises to test market viability quickly.',
-      icon: inter,
+      icon: mvp,
       bgGradient: 'bg-gradient-to-r from-pink-600 to-pink-500',
       borderGradient: 'hover:border-t-4 hover:border-t-pink-500',
     },
@@ -113,7 +118,7 @@ const AboutRecipe = () => {
       title: 'DevOps Consulting',
       description: 'CI/CD, Cloud Infrastructure',
       details: 'Providing expertise in DevOps to streamline development, deployment, and operation workflows.',
-      icon: socialMedia,
+      icon: devops,
       bgGradient: 'bg-gradient-to-r from-green-600 to-green-500',
       borderGradient: 'hover:border-t-4 hover:border-t-green-500',
     },

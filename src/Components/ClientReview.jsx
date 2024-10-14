@@ -65,7 +65,7 @@ const ReviewCard = ({ text, author, role }) => (
 
 const ClientReview = () => {
   return (
-    <div className="bg-white p-8 max-w-6xl mx-auto">
+    <div className="bg-white p-8 max-w-6xl mx-auto mt-20">
       {/* Background image */}
       <img
         src={clientbg}

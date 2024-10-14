@@ -5,7 +5,7 @@ import app from '../assets/app.png';
 import software from '../assets/software.png';
 import inter from '../assets/interface.png';
 import socialMedia from '../assets/socialMedia.png';
-import goal from '../assets/goal.png';
+import icecube from '../assets/icecube.png';
 import saas from '../assets/saas.png';
 import mvp from '../assets/mvp.png';
 import devops from '../assets/devops.png';
@@ -186,13 +186,14 @@ const Recipe = () => {
         ))}
       </div>
 
-      {/* Bottom Image */}
-      <div className="mt-8 flex justify-center">
+      {/* Bottom Image - Position it properly */}
+      <div className="mt-40 bg-purple-950 text-white text-start text-4xl h-96 relative flex justify-center rounded-3xl">
+        <p className='mt-32 max-w-5xl'>Our goal is to develop custom software solutions that empower businesses, streamline processes and provide an opportunity to establish as renowned brands.</p>
         <img 
-          src={goal} 
+          src={icecube} 
           alt="Goal" 
-          className="w-full sm:w-3/4 lg:w-2/3 xl:w-1/2 h-auto" 
-          style={{ maxHeight: '500px' }}
+          className="absolute bottom-20 right-5 w-24 md:w-32 lg:w-96 animate-bounce" // Change width as needed
+          style={{ transform: 'translate(25%, -25%)', maxHeight: '500px' }} // Adjust this to control how much it overlaps
         />
       </div>
     </div>

@@ -1,128 +1,214 @@
-import React, { useState, useEffect } from 'react';
-import achievement from '../assets/achievement.png';
-import person1 from '../assets/testimonials/p1.png';
-import person2 from '../assets/testimonials/p2.png';
-import person3 from '../assets/testimonials/p3.png';
-import person4 from '../assets/testimonials/p4.png';
-import person5 from '../assets/testimonials/p5.png';
+import React, { useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const Achievements = () => {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+const Testimonials = () => {
+  const [currentTestimonial, setCurrentTestimonial] = useState(2);
 
   const testimonials = [
     {
-      id: 1,
-      text: "The team at Markle Tech and Media delivered outstanding results. Their strategic approach, technical expertise & attention to every detail sets them apart.",
-      author: "Millon Zahino",
-      position: "Behavioral Science",
-      avatar: person1,
-      rating: 5
+      name: "Vipin",
+      position: "Co Founder - Creative Hub",
+      image: "/api/placeholder/400/300",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     },
     {
-      id: 2,
-      text: "Innovation, Tailored for you Innovating with future proof software to enhance operational efficiency.",
-      author: "Sarah Chen",
-      position: "Tech Lead",
-      avatar: person2,
-      rating: 5
+      name: "hemann",
+      position: "Co Founder - Creative Hub",
+      image: "/api/placeholder/400/300",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     },
     {
-      id: 3,
-      text: "The attention to detail and customer service is unmatched. Highly recommend their services to anyone looking for excellence.",
-      author: "James Wilson",
-      position: "Project Manager",
-      avatar: person3,
-      rating: 5
-    }
+      name: "himanshu",
+      position: "Co Founder - Creative Hub",
+      image: "/api/placeholder/400/300",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+      name: "vicky",
+      position: "Co Founder - Creative Hub",
+      image: "/api/placeholder/400/300",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+      name: "durgesh",
+      position: "Co Founder - Creative Hub",
+      image: "/api/placeholder/400/300",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+      name: "rohit",
+      position: "Co Founder - Creative Hub",
+      image: "/api/placeholder/400/300",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    // Add more testimonials here...
   ];
 
-  // Automatically move to the next testimonial every 5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTestimonial((prev) => 
-        prev === testimonials.length - 1 ? 0 : prev + 1
-      );
-    }, 5000); // 5 seconds
+  const nextTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+  };
 
-    // Clear interval on component unmount
-    return () => clearInterval(interval);
-  }, [testimonials.length]);
+  const prevTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
 
   return (
-    <div className='container mx-auto px-4 md:py-16 py-10 flex flex-col items-center'>
-      <h1 className="text-3xl md:text-4xl lg:text-5xl text-purple-950 mb-8 text-center">
-      Our Achievements
-            </h1>
-      <p className="text-center text-xl mb-8 text-gray-500">
-      Markle takes pride in delivering impactful solutions & 
-      achieving remarkable milestones worldwide.
-      </p>
+    <div className="container mx-auto px-4 py-16 bg-white">
+      {/* <div className="text-left mb-4">
+        <h2 className="text-purple-900 text-lg font-semibold">Application Monitoring</h2>
+        <h3 className="text-purple-700 text-md">Build Tools</h3>
+      </div> */}
       
-      <div className="flex justify-center w-full max-w-7xl mb-20">
-        <img 
-          src={achievement} 
-          alt="Our Achievements" 
-          className='w-full h-auto object-contain'
-        />
+      <div className="relative max-w-6xl mx-auto h-[600px]">
+        <h1 className='text-center text-6xl text-purple-950'>Our Testimonials</h1>
+        <p className='text-center text-2xl mt-5 mb-10 text-gray-500'>Lorem ipsum dolor sit amet, consectetur adipiscing elit,.</p>
+        <div className="flex items-center justify-center h-full">
+          {[-2, -1, 0, 1, 2].map((offset) => {
+            const index = (currentTestimonial + offset + testimonials.length) % testimonials.length;
+            const testimonial = testimonials[index];
+            return (
+              <div
+                key={index}
+                className={`absolute transition-all duration-300 ${
+                  offset === 0
+                    ? 'z-30 scale-100 opacity-100'
+                    : Math.abs(offset) === 1
+                    ? 'z-20 scale-95 opacity-20'
+                    : 'z-10 scale-90 opacity-10'
+                }`}
+                style={{
+                  transform: `translateX(${offset * 40}%) scale(${
+                    1 - Math.abs(offset) * 0.05
+                  })`,
+                }}
+              >
+                <div className="bg-purple-950 rounded-3xl p-6 w-[360px] h-[600px] shadow-lg ">
+                  <div className="bg-blue-700 rounded-2xl w-full h-48 mb-4 overflow-hidden">
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h3 className="text-white text-2xl font-semibold text-center mb-1">
+                    "{testimonial.name}"
+                  </h3>
+                  <p className="text-purple-300 text-sm text-center mb-4">
+                    ({testimonial.position})
+                  </p>
+                  <p className="text-white text-sm text-center">
+                    {testimonial.text}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        
+        <button
+          onClick={prevTestimonial}
+          className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-16 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 z-40"
+        >
+          <ChevronLeft size={24} />
+        </button>
+        <button
+          onClick={nextTestimonial}
+          className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-16 bg-white rounded-full p-2 shadow-md hover:bg-gray-100 z-40"
+        >
+          <ChevronRight size={24} />
+        </button>
       </div>
 
-      {/* New Testimonials Section */}
-      <h1 className="text-3xl md:text-4xl lg:text-5xl text-purple-950 mb-16 text-center mt-16">
-      Stories of Satisfaction
-      </h1>
-      <div className="w-full max-w-7xl bg-purple-950 rounded-3xl p-8 flex flex-col lg:flex-row relative">
-        {/* Left Side - Floating Avatars (hidden on small screens) */}
-        <div className="w-full lg:w-1/2 relative min-h-[400px] mb-8 lg:mb-0 hidden lg:block">
-          <div className="absolute top-12 left-12">
-            <img src={person1} alt="" className="w-16 h-16 md:w-20 md:h-20 rounded-full border-4 border-yellow-400"/>
-          </div>
-          <div className="absolute top-32 left-32">
-            <img src={person2} alt="" className="w-16 h-16 md:w-20 md:h-20 rounded-full border-4 border-yellow-400"/>
-          </div>
-          <div className="absolute bottom-20 left-20">
-            <img src={person3} alt="" className="w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-purple-400"/>
-          </div>
-          <div className="absolute right-24 top-16">
-            <img src={person4} alt="" className="w-16 h-16 md:w-20 md:h-20 rounded-full border-4 border-blue-300"/>
-          </div>
-          <div className="absolute right-12 bottom-32">
-            <img src={person5} alt="" className="w-16 h-16 md:w-20 md:h-20 rounded-full border-4 border-yellow-400"/>
-          </div>
-        </div>
-
-        {/* Right Side - Testimonial Carousel */}
-        <div className="w-full lg:w-1/2 bg-white rounded-2xl p-6 md:p-8 relative">
-          {/* Rating Stars */}
-          <div className="flex mb-4">
-            {[...Array(testimonials[currentTestimonial].rating)].map((_, index) => (
-              <svg key={index} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-              </svg>
-            ))}
-          </div>
-
-          {/* Testimonial Text */}
-          <p className="text-lg md:text-xl italic mb-8">"{testimonials[currentTestimonial].text}"</p>
-
-          {/* Author Info */}
-          <div className="flex items-center">
-            <img 
-              src={testimonials[currentTestimonial].avatar} 
-              alt={testimonials[currentTestimonial].author}
-              className="w-10 h-10 md:w-12 md:h-12 rounded-full mr-4"
-            />
-            <div>
-              <h4 className="font-semibold">{testimonials[currentTestimonial].author}</h4>
-              <p className="text-gray-600">{testimonials[currentTestimonial].position}</p>
-            </div>
-          </div>
-
-          {/* Hide Navigation Buttons */}
-          {/* Navigation buttons are removed */}
-        </div>
-      </div>
+      {/* <div className="text-center mt-8">
+        <h2 className="text-purple-900 text-3xl font-bold">Innovating with you</h2>
+        <p className="text-purple-700 text-lg">Innovating with you to deliver exceptional efficiency.</p>
+      </div> */}
     </div>
   );
-}
+};
 
-export default Achievements;
+export default Testimonials;
+
+
+
+
+// import React from 'react';
+// import { CarouselComponent, CarouselItemsDirective, CarouselItemDirective } from "@syncfusion/ej2-react-navigations";
+
+// const Testimonials = () => {
+//   const testimonials = [
+//     {
+//       name: "Vipin",
+//       position: "Co Founder - Creative Hub",
+//       image: "/api/placeholder/400/300",
+//       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+//     },
+//     {
+//       name: "Hermann",
+//       position: "Co Founder - Creative Hub",
+//       image: "/api/placeholder/400/300",
+//       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+//     },
+//     {
+//       name: "Himanshu",
+//       position: "Co Founder - Creative Hub",
+//       image: "/api/placeholder/400/300",
+//       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+//     },
+//     {
+//       name: "Vicky",
+//       position: "Co Founder - Creative Hub",
+//       image: "/api/placeholder/400/300",
+//       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+//     },
+//     {
+//       name: "Durgesh",
+//       position: "Co Founder - Creative Hub",
+//       image: "/api/placeholder/400/300",
+//       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+//     },
+//     {
+//       name: "Rohit",
+//       position: "Co Founder - Creative Hub",
+//       image: "/api/placeholder/400/300",
+//       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+//     },
+//   ];
+
+//   return (
+//     <div className="container mx-auto px-4 py-16 bg-white">
+//       <h1 className='text-center text-6xl text-purple-950 mb-4'>Our Testimonials</h1>
+//       <p className='text-center text-2xl mb-10 text-gray-500'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      
+//       <div className='control-container'>
+//         <CarouselComponent animationEffect="Custom" cssClass="parallax">
+//           <CarouselItemsDirective>
+//             {testimonials.map((testimonial, index) => (
+//               <CarouselItemDirective key={index} template={`
+//                 <figure class="img-container">
+//                   <div class="bg-purple-950 rounded-3xl p-6 w-[360px] h-[600px] shadow-lg mx-auto">
+//                     <div class="bg-blue-700 rounded-2xl w-full h-48 mb-4 overflow-hidden">
+//                       <img src="${testimonial.image}" alt="${testimonial.name}" style="height:100%;width:100%;object-fit:cover;" />
+//                     </div>
+//                     <h3 class="text-white text-2xl font-semibold text-center mb-1">
+//                       "${testimonial.name}"
+//                     </h3>
+//                     <p class="text-purple-300 text-sm text-center mb-4">
+//                       (${testimonial.position})
+//                     </p>
+//                     <p class="text-white text-sm text-center">
+//                       ${testimonial.text}
+//                     </p>
+//                   </div>
+//                   <figcaption class="img-caption">${testimonial.name}</figcaption>
+//                 </figure>
+//               `} />
+//             ))}
+//           </CarouselItemsDirective>
+//         </CarouselComponent>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Testimonials;

@@ -9,7 +9,7 @@ const Solution = () => {
   ];
 
   return (
-    <div className="w-full mt-20 text-center">
+    <div className="w-full mt-40 text-center">
       <h1 className="text-3xl md:text-4xl lg:text-5xl text-purple-950 mb-8 text-center">Innovation, Tailored for you</h1>
       <p className="text-center text-xl mb-8 text-gray-500">Innovating with future-proof software to enhance operational efficiency.</p>
 

@@ -45,7 +45,6 @@ const Navbar = () => {
         { path: '/service/all-services', label: 'See All Services' },
       ],
     },
-    
     { path: '/industry', label: 'Industries' },
     { path: '/solution', label: 'Solutions' },
     { path: '/pricing', label: 'Pricing' },
@@ -54,7 +53,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-50 shadow-md bg-white">
+      <nav className="fixed top-0 left-0 w-full z-50 bg-white">
         {/* Top section with contact info */}
         <div className="hidden md:block bg-purple-950 text-white">
           <div className="container mx-auto px-4">
@@ -208,9 +207,13 @@ const Navbar = () => {
                   )}
                 </div>
               ))}
+
             </div>
           </div>
         </div>
+
+        {/* New <p> tag added at the bottom of the main navbar */}
+        <p className="text-center blinking py-4">Don't Wait! Download The Specific Modules Marketing Deck Today! Download Now!</p>
       </nav>
 
       {/* Add padding to the top of the content to prevent overlap */}

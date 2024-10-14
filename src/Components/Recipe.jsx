@@ -25,7 +25,6 @@ const Recipe = () => {
       icon: web,
       bgGradient: 'bg-gradient-to-r from-blue-500 to-blue-600',
       borderGradient: 'hover:border-t-4 hover:border-t-blue-600',
-      isHover: false,
     },
     {
       id: 2,
@@ -36,7 +35,6 @@ const Recipe = () => {
       icon: ecomm,
       bgGradient: 'bg-gradient-to-r from-indigo-500 to-indigo-600',
       borderGradient: 'hover:border-t-4 hover:border-t-indigo-600',
-      isHover: false,
     },
     {
       id: 3,
@@ -47,7 +45,6 @@ const Recipe = () => {
       icon: app,
       bgGradient: 'bg-gradient-to-r from-purple-700 to-purple-800',
       borderGradient: 'hover:border-t-4 hover:border-t-purple-800',
-      isHover: false,
     },
     {
       id: 4,
@@ -58,7 +55,6 @@ const Recipe = () => {
       icon: software,
       bgGradient: 'bg-gradient-to-r from-purple-700 to-purple-500',
       borderGradient: 'hover:border-t-4 hover:border-t-purple-500',
-      isHover: false,
     },
     {
       id: 5,
@@ -69,7 +65,6 @@ const Recipe = () => {
       icon: inter,
       bgGradient: 'bg-gradient-to-r from-pink-600 to-pink-500',
       borderGradient: 'hover:border-t-4 hover:border-t-pink-500',
-      isHover: false,
     },
     {
       id: 6,
@@ -80,7 +75,6 @@ const Recipe = () => {
       icon: socialMedia,
       bgGradient: 'bg-gradient-to-r from-green-600 to-green-500',
       borderGradient: 'hover:border-t-4 hover:border-t-green-500',
-      isHover: false,
     },
     {
       id: 7,
@@ -91,7 +85,6 @@ const Recipe = () => {
       icon: saas,
       bgGradient: 'bg-gradient-to-r from-blue-600 to-blue-500',
       borderGradient: 'hover:border-t-4 hover:border-t-blue-500',
-      isHover: true,
     },
     {
       id: 8,
@@ -102,7 +95,6 @@ const Recipe = () => {
       icon: lowcode,
       bgGradient: 'bg-gradient-to-r from-indigo-600 to-indigo-500',
       borderGradient: 'hover:border-t-4 hover:border-t-indigo-500',
-      isHover: true,
     },
     {
       id: 9,
@@ -113,7 +105,6 @@ const Recipe = () => {
       icon: app,
       bgGradient: 'bg-gradient-to-r from-purple-700 to-purple-800',
       borderGradient: 'hover:border-t-4 hover:border-t-blue-600',
-      isHover: true,
     },
     {
       id: 10,
@@ -124,7 +115,6 @@ const Recipe = () => {
       icon: digital,
       bgGradient: 'bg-gradient-to-r from-purple-700 to-purple-500',
       borderGradient: 'hover:border-t-4 hover:border-t-purple-500',
-      isHover: true,
     },
     {
       id: 11,
@@ -135,7 +125,6 @@ const Recipe = () => {
       icon: mvp,
       bgGradient: 'bg-gradient-to-r from-pink-600 to-pink-500',
       borderGradient: 'hover:border-t-4 hover:border-t-pink-500',
-      isHover: true,
     },
     {
       id: 12,
@@ -146,7 +135,6 @@ const Recipe = () => {
       icon: devops,
       bgGradient: 'bg-gradient-to-r from-green-600 to-green-500',
       borderGradient: 'hover:border-t-4 hover:border-t-green-500',
-      isHover: true,
     },
   ];
 
@@ -155,13 +143,13 @@ const Recipe = () => {
     return (
       <>
         <div
-          className={`w-12 h-12 md:w-16 md:h-16 mx-auto rounded-full flex items-center justify-center ${isHovered ? service.bgGradient : service.bgGradient} mb-4 md:mb-6`}
+          className={`w-12 h-12 md:w-16 md:h-16 mx-auto rounded-full flex items-center justify-center ${service.bgGradient} mb-4 md:mb-6`}
         >
           <img src={service.icon} alt={`${service.title} icon`} className="w-8 h-8 md:w-10 md:h-10" />
         </div>
         <h3 className="text-lg md:text-xl font-semibold text-gray-900">{service.title}</h3>
         <p className="mt-2 text-gray-600">{service.description}</p>
-        <p className="mt-4 text-gray-500">{isHovered ? service.details : service.details}</p>
+        <p className="mt-4 text-gray-500">{service.details}</p>
       </>
     );
   };
@@ -170,7 +158,7 @@ const Recipe = () => {
     <div className="py-16 px-4 sm:px-6 lg:px-8">
       {/* Section Title */}
       <h2 className="text-3xl md:text-4xl lg:text-5xl text-purple-950 mb-8 text-center">Our Recipe for Success</h2>
-      <p className="text-center text-xl mb-8 text-gray-500">Our Toolbox of Advanced Technologies and Services</p>
+      <p className="text-center text-lg sm:text-xl mb-8 text-gray-500">Our Toolbox of Advanced Technologies and Services</p>
       
       {/* Services Grid */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
@@ -187,13 +175,15 @@ const Recipe = () => {
       </div>
 
       {/* Bottom Image - Position it properly */}
-      <div className="mt-40 bg-purple-950 text-white text-start text-4xl h-96 relative flex justify-center rounded-3xl">
-        <p className='mt-32 max-w-5xl'>Our goal is to develop custom software solutions that empower businesses, streamline processes and provide an opportunity to establish as renowned brands.</p>
-        <img 
-          src={icecube} 
-          alt="Goal" 
-          className="absolute bottom-20 right-5 w-24 md:w-32 lg:w-96 animate-bounce" // Change width as needed
-          style={{ transform: 'translate(25%, -25%)', maxHeight: '500px' }} // Adjust this to control how much it overlaps
+      <div className="mt-20 md:mt-32 bg-purple-950 text-white text-start text-2xl sm:text-4xl h-80 sm:h-96 relative flex justify-center items-center rounded-3xl px-4">
+        <p className="mt-10 max-w-4xl text-lg sm:text-xl md:text-2xl lg:text-3xl text-center">
+          Our goal is to develop custom software solutions that empower businesses, streamline processes and provide an opportunity to establish as renowned brands.
+        </p>
+        <img
+          src={icecube}
+          alt="Goal"
+          className="absolute md:bottom-40 bottom-[270px] right-5 w-20 sm:w-28 md:w-40 lg:w-56 xl:w-72 animate-bounce"
+          style={{ transform: 'translate(25%, -25%)', maxHeight: '500px' }}
         />
       </div>
     </div>

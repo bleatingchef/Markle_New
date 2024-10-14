@@ -120,7 +120,7 @@ const Navbar = () => {
                           className="relative px-3 py-2 transition-colors duration-200 text-gray-700 hover:text-blue-600 flex items-center"
                         >
                           {item.label}
-                          <FaCaretDown className="ml-1" /> {/* Dropdown arrow icon */}
+                          <FaCaretDown className="ml-1" /> 
                         </button>
 
                         {/* Dropdown menu */}

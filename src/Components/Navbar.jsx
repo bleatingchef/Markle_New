@@ -19,7 +19,7 @@ const Navbar = () => {
 
   const navItems = [
     {
-      path: '/about',
+      // path: '/about',
       label: 'About',
       dropdown: [
         { path: '/about/company', label: 'About Company' },
@@ -31,7 +31,7 @@ const Navbar = () => {
       ],
     },
     {
-      path: '/service',
+      // path: '/service',
       label: 'Services',
       dropdown: [
         { path: '/service/software-development', label: 'Software Development' },

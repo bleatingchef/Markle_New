@@ -1,91 +1,74 @@
 import React, { useState } from 'react';
-import m1 from "../assets/m1.avif"
-
+import m1 from "../assets/m1.avif"; // Your first image
+import milestoneImage from "../assets/logo.png"; // Your uploaded image
 
 const milestones = [
   {
-    title: 'EVOLUTION',
-    description: 'A journey through the history of our company’s growth.',
-    icon: '💼',
-    bgColor: 'from-cyan-400 to-blue-500',
+    year: '2009-2011',
+    description: 'We started our journey in 2009 with a modest team fueled by big boundless ambitions.',
+    imageUrl: m1,
+  },
+  {
+    year: '2012-2014',
+    description: 'We expanded our team and began taking on significant projects that showcased our capabilities.',
+    imageUrl: m1,
+  },
+  {
+    year: '2015-2017',
+    description: 'Achieved significant milestones, becoming a recognized player in the industry.',
     imageUrl: m1, // Replace with your image path
   },
   {
-    title: 'EXPANSION',
-    description: 'Building a global presence through strategic planning and execution.',
-    icon: '💬',
-    bgColor: 'from-pink-500 to-orange-400',
-    imageUrl: 'path/to/expansion-image.png', // Replace with your image path
+    year: '2018-2020',
+    description: 'Continued innovation and growth, reaching new heights in technology.',
+    imageUrl: m1, // Replace with your image path
   },
   {
-    title: 'INNOVATION',
-    description: 'Pushing boundaries and driving progress through creative solutions.',
-    icon: '🏠',
-    bgColor: 'from-purple-500 to-pink-500',
-    imageUrl: 'path/to/innovation-image.png', // Replace with your image path
+    year: '2021-2023',
+    description: 'Emerging as an industry leader with numerous successful projects.',
+    imageUrl: m1, // Replace with your image path
   },
   {
-    title: 'LEADERSHIP',
-    description: 'Developing and cultivating effective leadership at all levels.',
-    icon: '⚙️',
-    bgColor: 'from-indigo-500 to-blue-600',
-    imageUrl: 'path/to/leadership-image.png', // Replace with your image path
+    year: '2024 And Many More',
+    description: 'Looking ahead to the future with ambitious goals yesyyesnye d.',
+    imageUrl: m1, // Replace with your image path
   },
 ];
-
-const TimelineItem = ({ title, description, icon, bgColor, isActive, onClick }) => (
-  <div
-    onClick={onClick}
-    className={`flex flex-col justify-center items-center text-center rounded-lg p-6 bg-gradient-to-r ${bgColor} w-60 h-80 transition-transform duration-300 ease-in-out transform hover:scale-105 cursor-pointer shadow-lg hover:shadow-2xl`}
-  >
-    <div className="text-white text-3xl">{icon}</div>
-    <h3 className={`mt-4 text-white text-2xl font-bold ${isActive ? 'animate-pulse' : ''}`}>{title}</h3>
-    <p className={`mt-2 text-white transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-50'}`}>
-      {description}
-    </p>
-  </div>
-);
 
 const DateWiseAboutCompany = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="flex flex-col items-center">
-      <h2 className="text-4xl font-bold mb-10 text-pink-600">Business Timeline</h2>
+    <div className="flex justify-center items-center mt-10 mb-20">
+      <div className="flex flex-col items-center"> {/* Centering the overall layout */}
+        {/* Horizontal buttons with years above */}
+        <div className="flex space-x-8 mb-6"> {/* Added spacing between buttons */}
+          {milestones.map((milestone, index) => (
+            <div key={index} className="flex flex-col items-center">
+              <span className="mb-5 text-lg mx-16 font-semibold">{milestone.year}</span> {/* Year above the button */}
+              <button
+                className={`w-12 h-12 rounded-full mb-20 flex items-center justify-center text-white transition-colors duration-300 ${
+                  activeIndex === index ? 'bg-pink-600' : 'bg-gray-400 hover:bg-pink-500'
+                }`}
+                onClick={() => setActiveIndex(index)}
+              >
+                {/* You can put an icon or text inside the button */}
+              </button>
+            </div>
+          ))}
+        </div>
 
-      {/* Sliding container */}
-      <div className="flex overflow-x-scroll w-full snap-x scrollbar-hide justify-center space-x-6">
-        {milestones.map((milestone, index) => (
-          <div
-            key={index}
-            className="snap-center"
-            onClick={() => setActiveIndex(index)}
-          >
-            <TimelineItem
-              title={milestone.title}
-              description={milestone.description}
-              icon={milestone.icon}
-              bgColor={milestone.bgColor}
-              isActive={activeIndex === index}
-            />
+        {/* Active milestone display with image and description */}
+        <div className="flex flex-row items-center">
+          <img
+            src={milestones[activeIndex].imageUrl}
+            alt={milestones[activeIndex].year}
+            className="w-[600px] h-auto rounded-lg shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-110" // Increased size of the image
+          />
+          <div className="ml-6 text-lg max-w-lg font-semibold text-gray-800">
+            {milestones[activeIndex].description}
           </div>
-        ))}
-      </div>
-
-      {/* Active milestone display with enlarged image */}
-      <div className="mt-10 p-6">
-        <img
-          src={milestones[activeIndex].imageUrl}
-          alt={milestones[activeIndex].title}
-          className="w-64 h-64 rounded-lg shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-110"
-        />
-        <TimelineItem
-          title={milestones[activeIndex].title}
-          description={milestones[activeIndex].description}
-          icon={milestones[activeIndex].icon}
-          bgColor={milestones[activeIndex].bgColor}
-          isActive={true}
-        />
+        </div>
       </div>
     </div>
   );

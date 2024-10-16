@@ -19,7 +19,7 @@ const Navbar = () => {
 
   const navItems = [
     {
-      // path: '/about',
+      path: '/about',
       label: 'About',
       dropdown: [
         { path: '/about/company', label: 'About Company' },
@@ -31,7 +31,7 @@ const Navbar = () => {
       ],
     },
     {
-      // path: '/service',
+      path: '/service',
       label: 'Services',
       dropdown: [
         { path: '/service/software-development', label: 'Software Development' },
@@ -56,7 +56,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+      <nav className="fixed top-0 left-0 w-full z-50 bg-white ">
         {/* Top section with contact info */}
         <div className="hidden md:block bg-purple-950 text-white">
           <div className="container mx-auto px-4">
@@ -122,8 +122,8 @@ const Navbar = () => {
                         </NavLink>
 
                         {/* Dropdown menu on hover */}
-                        <div className="absolute left-0 mt-2 bg-white border border-gray-200 shadow-xl rounded-3xl z-10 p-6 w-[700px] hidden group-hover:flex">
-                          <img src={dropimage} alt="Dropdown Graphic" className="w-24 h-24 mr-4" />
+                        <div className="absolute top-[1.5rem] mt-2 bg-white border border-gray-200 shadow-xl rounded-3xl z-10 p-6 w-[1000px] hidden group-hover:flex">
+                          {/* <img src={dropimage} alt="Dropdown Graphic" className="w-24 h-24 mr-4" /> */}
                           <div className="grid grid-cols-2 gap-8">
                             {item.dropdown.map((subItem) => (
                               <NavLink

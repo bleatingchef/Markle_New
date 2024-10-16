@@ -13,7 +13,7 @@
   }
   
   .blinking {
-    animation: blink 1s infinite;
+    animation: blink 4s infinite;
     color: blue; /* Set the text color */
   }
   

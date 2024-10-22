@@ -25,12 +25,15 @@ const Career = () => {
                   <p className="text-gray-500">{position.details}</p>
                   <hr className="border-gray-300 my-2 w-full" />
                 </div>
-                <button
-                  onClick={openModal}
-                  className="border-2 border-blue-500 text-blue-500 py-2 px-4 rounded-full hover:bg-blue-500 hover:text-white transition-colors"
-                >
-                  Apply Now
-                </button>
+                <div className="p-[3px] bg-gradient-to-r from-blue-500 to-purple-500 rounded-full">
+                  <button
+                    onClick={openModal}
+                    className="bg-white border-2 border-transparent text-blue-500 py-2 px-4 rounded-full "
+                  >
+                    Apply Now
+                  </button>
+                </div>
+
               </div>
             </li>
           ))}

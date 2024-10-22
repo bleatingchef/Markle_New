@@ -5,6 +5,7 @@ import Welcome from '../Components/Welcome'
 import About_Recipe from '../Components/About_Recipe'
 import AboutTestimonials from '../Components/AboutTestimonials'
 import DateWiseAboutCompany from '../Components/DateWiseAboutCompany'
+import Map from '../Components/Map'
 
 const About_com = () => {
   return (
@@ -13,6 +14,7 @@ const About_com = () => {
         <Welcome/>
         <About_Recipe/>
         <DateWiseAboutCompany/>
+        <Map/>
         {/* <AboutTestimonials/> */}
     </div>
   )

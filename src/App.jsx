@@ -26,6 +26,33 @@ import ServicesMvp from "./pages/ServicesMvp";
 import ServicesSaas from "./pages/ServicesSaas";
 import ServicesLowCodeNoCode from "./pages/ServicesLowCodeNoCode";
 import ServicesWebDev from "./pages/ServicesWebDev";
+import FinanceAndFintech from "./pages/industry/FinanceAndFintech";
+import TravelAndHospitality from "./pages/industry/TravelAndHospitality";
+import RealEstate from "./pages/industry/RealEstate"
+import HealthAndWellness from "./pages/industry/HealthAndWellness"
+import Transportation from "./pages/industry/Transportation"
+import ProfessionalServices from "./pages/industry/ProfessionalServices"
+import MediaAndEntertainment from "./pages/industry/MediaAndEntertainment"
+import RetailAndECommerce from "./pages/industry/RetailAndECommerce"
+import Education from "./pages/industry/Education"
+import Manufacturing from "./pages/industry/Manufacturing"
+import Telecommunications from "./pages/industry/Telecommunications"
+import ViewAllIndustries from "./pages/industry/ViewAllIndustries"
+import Erp from "./pages/solution/Erp"
+import ELearning from "./pages/solution/ELearning"
+import Crm from "./pages/solution/Crm"
+import OperationsManagementSystem from "./pages/solution/OperationsManagementSystem"
+import Cms from "./pages/solution/Cms"
+import ECommerce from "./pages/solution/ECommerce"
+import SupplyChainManagement from "./pages/solution/SupplyChainManagement"
+import WebPortals from "./pages/solution/WebPortals"
+import OttPlatform from "./pages/solution/OttPlatform"
+import FleetManagement from "./pages/solution/FleetManagement"
+import FinancialManagement from "./pages/solution/FinancialManagement"
+import ProjectManagementSystem from "./pages/solution/ProjectManagementSystem"
+import HumanResourcesManagementSystem from "./pages/solution/HumanResourcesManagementSystem"
+import HospitalManagementSystem from "./pages/solution/HospitalManagementSystem"
+import ViewAllProducts from "./pages/solution/ViewAllProducts"
 
 function App() {
   return (
@@ -58,6 +85,35 @@ function App() {
             <Route path="/service/low-code-no-code" element={<ServicesLowCodeNoCode />} />
             <Route path="/service/web-development" element={<ServicesWebDev />} />
             <Route path="/service/all-services" element={<AllServices />} />
+            <Route path="/industry/finance-fintech" element={<FinanceAndFintech/>}/>
+            <Route path="/industry/travel-hospitality" element={<TravelAndHospitality/>}/>
+            <Route path="/industry/real-estate-construction" element={<RealEstate/>}/>
+            <Route path="/industry/health-wellness" element={<HealthAndWellness/>}/>
+            <Route path="/industry/transportation-logistics" element={<Transportation/>}/>
+            <Route path="/industry/professional-services" element={<ProfessionalServices/>}/>
+            <Route path="/industry/media-entertainment" element={<MediaAndEntertainment/>}/>
+            <Route path="/industry/retail-ecommerce" element={<RetailAndECommerce/>}/>
+            <Route path="/industry/education" element={<Education/>}/>
+            <Route path="/industry/manufacturing" element={<Manufacturing/>}/>
+            <Route path="/industry/telecommunications" element={<Telecommunications/>}/>
+            <Route path="/industry/all-industries" element={<ViewAllIndustries/>}/>
+            <Route path="/solution/erp" element={<Erp/>}/>
+            <Route path="/solution/elearning" element={<ELearning/>}/>
+            <Route path="/solution/crm" element={<Crm/>}/>
+            <Route path="/solution/operations-management" element={<OperationsManagementSystem/>}/>
+            <Route path="/solution/cms" element={<Cms/>}/>
+            <Route path="/solution/ecommerce" element={<ECommerce/>}/>
+            <Route path="/solution/supply-chain-management" element={<SupplyChainManagement/>}/>
+            <Route path="/solution/web-portals" element={<WebPortals/>}/>
+            <Route path="/solution/ott-platform" element={<OttPlatform/>}/>
+            <Route path="/solution/fleet-management" element={<FleetManagement/>}/>
+            <Route path="/solution/financial-management" element={<FinancialManagement/>}/>
+            <Route path="/solution/project-management" element={<ProjectManagementSystem/>}/>
+            <Route path="/solution/human-resources" element={<HumanResourcesManagementSystem/>}/>
+            <Route path="/solution/hospital-management" element={<HospitalManagementSystem/>}/>
+            <Route path="/solution/all-products" element={<ViewAllProducts/>}/>
+            {/* <Route path="/solution/" element={<FinanceAndFintech/>}/> */}
+            {/* <Route path="/solution/" element={<FinanceAndFintech/>}/> */}
             
             {/* Main Routes */}
             <Route path="/industry" element={<Industry_com />} />

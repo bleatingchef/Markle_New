@@ -207,14 +207,19 @@ import frame2 from "../assets/heroFrame2.png";
 const Hero = () => {
   return (
     <div className="flex flex-col items-center">
-      {/* Wrapper for the first image with a gradient background */}
-      <div className="pr-40 pl-40 pt-20">
+      {/* First image with sliding animation from left to right */}
+      <div className="pr-40 pl-40 pt-20 animate-slideInLeft1">
         <img src={frame} alt="Frame 1" className="w-[100rem] max-w-full" />
       </div>
-      <img src={frame2} alt="Frame 2" className="mt-4 pt-10 pl-40 pr-40 max-w-full" />
+      
+      {/* Second image with sliding animation from right to left */}
+      <div className="mt-4 pt-10 pl-40 pr-40 animate-slideInRight">
+        <img src={frame2} alt="Frame 2" className="w-[100rem] max-w-full" />
+      </div>
     </div>
   );
 }
 
 export default Hero;
+
 

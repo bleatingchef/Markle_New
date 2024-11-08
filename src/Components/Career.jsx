@@ -19,7 +19,7 @@ const Career = () => {
         <ul className="space-y-6">
           {positions.map((position, index) => (
             <li key={index} className="p-4 border-b border-gray-300 shadow-sm hover:shadow-lg transition-shadow">
-              <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center ">
                 <div className="text-left w-3/4">
                   <h3 className="text-xl font-semibold">{position.title}</h3>
                   <p className="text-gray-500">{position.details}</p>

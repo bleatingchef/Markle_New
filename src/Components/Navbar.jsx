@@ -143,16 +143,16 @@ const Navbar = () => {
                 <span className="hidden lg:inline">USA: +1-628 277 4060</span>
               </div>
               <div className="flex items-center space-x-4">
-                <a href="#" className="hover:text-pink-600">
+                <a href="https://www.instagram.com/markletechandmedia" className="hover:text-pink-600">
                   <FaInstagram className="w-5 h-5" />
                 </a>
-                <a href="#" className="hover:text-blue-600">
+                <a href="https://www.facebook.com/markletechandmedia" className="hover:text-blue-600">
                   <FaFacebook className="w-5 h-5" />
                 </a>
-                <a href="#" className="hover:text-blue-600">
+                <a href="https://www.linkedin.com/company/markle-tech-and-mediaagency" className="hover:text-blue-600">
                   <FaLinkedin className="w-5 h-5" />
                 </a>
-                <a href="#" className="hover:text-red-600">
+                <a href="https://www.youtube.com/@markletechandmedia" className="hover:text-red-600">
                   <FaYoutube className="w-5 h-5" />
                 </a>
               </div>
@@ -272,7 +272,7 @@ const Navbar = () => {
 
       {/* Blinking download message */}
       <div className="fixed top-[88px] left-0 w-full z-30 bg-white">
-        <p className="text-center blinking py-4">Don't Wait! Download The Specific Modules Marketing Deck Today! Download Now!</p>
+        <p className="text-center blinking py-4">Don't Wait! Download The Specific Modules Marketing Deck Today! <a href='#' className="hover:text-pink-600">Download Now!</a></p>
       </div>
 
       {/* Add padding to the top of the content to prevent overlap */}

@@ -112,7 +112,7 @@ function App() {
             <Route path="/solution/human-resources" element={<HumanResourcesManagementSystem/>}/>
             <Route path="/solution/hospital-management" element={<HospitalManagementSystem/>}/>
             <Route path="/solution/all-products" element={<ViewAllProducts/>}/>
-            {/* <Route path="/solution/" element={<FinanceAndFintech/>}/> */}
+            {/* <Route path="/pricing/pricinghome" element={<Pricing_com/>}/> */}
             {/* <Route path="/solution/" element={<FinanceAndFintech/>}/> */}
             
             {/* Main Routes */}

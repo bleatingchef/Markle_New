@@ -1,11 +1,21 @@
 import React, { useState } from 'react';
 import viewproductbg from "../../../assets/solutionimages/viewproductbg.png";
-import mockup1 from "../../../assets/solutionimages/mockup1.png";
-import mockup2 from "../../../assets/solutionimages/mockup2.png";
-import mockup3 from "../../../assets/solutionimages/mockup3.png";
-import htmlIcon from "../../../assets/solutionimages/icons/html_icon.png"; // Replace with actual paths to icons
-import phpIcon from "../../../assets/solutionimages/icons/php_icon.png";
-import jsIcon from "../../../assets/solutionimages/icons/js_icon.png";
+import mockup1 from "../../../assets/solutionimages/mockup1-min.png";
+import mockup2 from "../../../assets/solutionimages/mockup2-min.png";
+import mockup3 from "../../../assets/solutionimages/mockup3-min.png";
+import mockup4 from "../../../assets/solutionimages/mockup4-min.png";
+import mockup5 from "../../../assets/solutionimages/mockup5-min.png";
+import mockup6 from "../../../assets/solutionimages/mockup6-min.png";
+import mockup7 from "../../../assets/solutionimages/mockup7-min.png";
+import mockup8 from "../../../assets/solutionimages/mockup8-min.png";
+import mockup9 from "../../../assets/solutionimages/mockup9-min.png";
+import mockup10 from "../../../assets/solutionimages/mockup10-min.png";
+import mockup11 from "../../../assets/solutionimages/mockup11-min.png";
+import mockup12 from "../../../assets/solutionimages/mockup12-min.png";
+import htmlIcon from "../../../assets/solutionimages/icons/html.png"; // Replace with actual paths to icons
+import phpIcon from "../../../assets/solutionimages/icons/php.png";
+import jsIcon from "../../../assets/solutionimages/icons/js.png";
+import reactIcon from "../../../assets/solutionimages/icons/react.png";
 
 // const ProjectCard = ({ title, description, image, technologies, isOdd }) => (
 //   <div className={`flex ${isOdd ? 'flex-row-reverse' : 'flex-row'} items-center mb-10`}>
@@ -28,12 +38,12 @@ import jsIcon from "../../../assets/solutionimages/icons/js_icon.png";
 // );
 
 const ProjectCard = ({ title, description, image, technologies, isOdd }) => (
-  <div className={`flex ${isOdd ? 'flex-row-reverse' : 'flex-row'} items-center mb-6`}> {/* Change mb-10 to mb-6 */}
+  <div className={`flex ${isOdd ? 'flex-row-reverse' : 'flex-row'} items-center mb-`}> {/* Change mb-10 to mb-6 */}
     <div className="w-1/2 p-6">
-      <h2 className="text-xl font-bold">{title}</h2>
-      <p className="text-gray-700 mt-2">{description}</p>
-      <h3 className="mt-4 font-semibold">Challenges Accomplished</h3>
-      <p className="text-gray-700 mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+      <h2 className="text-5xl">{title}</h2>
+      <p className="text-gray-700 text-lg mt-2">{description}</p>
+      <h3 className="mt-4 text-3xl">Challenges Accomplished</h3>
+      <p className="text-gray-700 text-lg max-w-xl mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
       <h3 className="mt-4 font-semibold">Technology</h3>
       <div className="flex items-center mt-2 space-x-4">
         {technologies.map((tech, index) => (
@@ -50,23 +60,19 @@ const ProjectCard = ({ title, description, image, technologies, isOdd }) => (
 const ViewAllP = () => {
   const [visibleProjects, setVisibleProjects] = useState(3);
 
-  // Array with 15 unique project titles, descriptions, and technologies
   const projects = [
-    { title: 'Project 1', description: 'Description for project 1', image: mockup1, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }] },
-    { title: 'Project 2', description: 'Description for project 2', image: mockup2, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }] },
-    { title: 'Project 3', description: 'Description for project 3', image: mockup3, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }] },
-    { title: 'Project 4', description: 'Description for project 4', image: mockup2, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }] },
-    { title: 'Project 5', description: 'Description for project 5', image: mockup3, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }] },
-    { title: 'Project 6', description: 'Description for project 6', image: mockup2, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }] },
-    { title: 'Project 7', description: 'Description for project 7', image: mockup3, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }] },
-    { title: 'Project 8', description: 'Description for project 8', image: mockup2, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }] },
-    { title: 'Project 9', description: 'Description for project 9', image: mockup3, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }] },
-    { title: 'Project 10', description: 'Description for project 10', image: mockup2, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }] },
-    { title: 'Project 11', description: 'Description for project 11', image: mockup3, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }] },
-    { title: 'Project 12', description: 'Description for project 12', image: mockup2, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }] },
-    { title: 'Project 13', description: 'Description for project 13', image: mockup3, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }] },
-    { title: 'Project 14', description: 'Description for project 14', image: mockup2, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }] },
-    { title: 'Project 15', description: 'Description for project 15', image: mockup3, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }] },
+    { title: 'Banquet', description: 'A Banquet Hall At Your Service.', image: mockup1, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }, { name: 'React', icon: reactIcon }] },
+    { title: 'Legweniorn', description: 'Legal Platform for a Legal firm.', image: mockup2, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }, { name: 'React', icon: reactIcon }] },
+    { title: 'Radient Glow', description: 'A Place for all Beauty Product.', image: mockup3, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }, { name: 'React', icon: reactIcon }] },
+    { title: 'Medical', description: 'A Healthcare Platform.', image: mockup4, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }, { name: 'React', icon: reactIcon }] },
+    { title: 'OG Leather', description: 'A place for all Leather needs.', image: mockup5, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }, { name: 'React', icon: reactIcon }] },
+    { title: 'Global Care', description: 'A NGO web Platform.', image: mockup6, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }, { name: 'React', icon: reactIcon }] },
+    { title: 'Fitlife', description: 'A platform for gym and fitness.', image: mockup7, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }, { name: 'React', icon: reactIcon }] },
+    { title: 'Rahul Store', description: 'A online grocery store.', image: mockup8, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }, { name: 'React', icon: reactIcon }] },
+    { title: 'Cycle Wala', description: 'A online platform for Bicycles.', image: mockup9, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }, { name: 'React', icon: reactIcon }] },
+    { title: 'Professional CA', description: 'A website for Charted Accountants (CA).', image: mockup10, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }, { name: 'React', icon: reactIcon }] },
+    { title: 'E-Commerece', description: 'E-commerece platform.', image: mockup11, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }, { name: 'React', icon: reactIcon }] },
+    { title: 'Fliods', description: 'A Food ordering platform.', image: mockup12, technologies: [{ name: 'HTML5', icon: htmlIcon }, { name: 'PHP', icon: phpIcon }, { name: 'JavaScript', icon: jsIcon }, { name: 'React', icon: reactIcon }] },
   ];
 
   const showMoreProjects = () => {
@@ -74,15 +80,16 @@ const ViewAllP = () => {
   };
 
   return (
-    <div className="pt-20 px-20 animate-slideInLeft1">
-      <div className="text-center mb-12">
-        <h1 className="text-3xl font-bold text-purple-700">Our Portfolio</h1>
-        <p className="text-gray-600 mt-4">Delivering value to multiple industries, we innovate industry-specific technologies to scale and optimize operations and bottom line.</p>
+    <div className="pt-20 px-20 ">
+       <div className="pr-40 pl-40 pb-10 animate-slideInLeft1">
+        <img src={viewproductbg} alt="Background" className="w-[100rem] mb-10 max-w-full" />
       </div>
-      <div className="pr-40 pl-40 pt-20">
-        <img src={viewproductbg} alt="Background" className="w-[100rem] max-w-full" />
+      <div className="text-center">
+        <h1 className="text-5xl text-purple-950">Our Portfolio</h1>
+        <p className="text-gray-600 text-xl text-center max-w-5xl mx-auto mt-4">Delivering value to multiple industries, we innovate industry-specific technologies to scale and optimize operations and bottom line.</p>
       </div>
-      <div className="mt-8">
+     
+      <div className=" mb-20 space-y-20 mt-20">
         {projects.slice(0, visibleProjects).map((project, index) => (
           <ProjectCard 
             key={index}
@@ -95,10 +102,10 @@ const ViewAllP = () => {
         ))}
       </div>
       {visibleProjects < projects.length && (
-        <div className="text-center mt-8">
+        <div className="text-center mb-5 ">
           <button 
             onClick={showMoreProjects} 
-            className="bg-purple-700 text-white font-bold py-2 px-4 rounded hover:bg-purple-800"
+            className="bg-purple-950 text-white py-2 px-4 rounded hover:bg-purple-800"
           >
             View More
           </button>

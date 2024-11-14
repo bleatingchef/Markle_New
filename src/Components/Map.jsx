@@ -15,10 +15,10 @@ import mapimage from "../assets/mapimg2.png"; // Replace with your exact path
 const Map = () => {
   return (
     <div className="flex flex-col items-center py-10 px-4 sm:px-6 lg:px-8">
-      <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-4 text-center">
+      <h2 className="text-2xl sm:text-5xl text-purple-950 mb-4 text-center">
         Global Reach, Local Expertise: We Code In All Languages Of Success
       </h2>
-      <p className="text-center text-gray-600 mb-8 max-w-xl">
+      <p className="text-center text-gray-600 text-xl mb-8 max-w-5xl">
         We are empowering global innovation with tailored software/app solutions.
         Bridging cultures, languages, and distances for business success worldwide.
       </p>

@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import t1 from "../assets/testimonials/t1.jpg"
+import t2 from "../assets/testimonials/t2.jpg"
+import t3 from "../assets/testimonials/t3.jpg"
 
 const Testimonials = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(2);
@@ -7,39 +10,39 @@ const Testimonials = () => {
   const testimonials = [
     {
       name: "Vipin",
-      position: "Co Founder - Creative Hub",
-      image: "/api/placeholder/400/300",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      position: "Co-Founder - Creative Hub",
+      image: t1,
+      text: "Working with Creative Hub has transformed our projects. Their innovative ideas and dedication to quality are unmatched.",
     },
     {
       name: "Hermann",
-      position: "Co Founder - Creative Hub",
-      image: "/api/placeholder/400/300",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      position: "Director of Design - Creative Solutions",
+      image: t2,
+      text: "Creative Hub brings a unique vision to every project. Their attention to detail and creativity has taken our brand to new heights.",
     },
     {
       name: "Himanshu",
-      position: "Co Founder - Creative Hub",
-      image: "/api/placeholder/400/300",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      position: "Lead Developer - Digital Creations",
+      image: t3,
+      text: "Their technical expertise and collaborative approach make every project a success. A truly exceptional team!",
     },
     {
       name: "Vicky",
-      position: "Co Founder - Creative Hub",
-      image: "/api/placeholder/400/300",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      position: "Product Manager - InnovateX",
+      image: t3,
+      text: "Creative Hub’s professionalism and commitment to excellence are evident in everything they do. They exceeded our expectations.",
     },
     {
       name: "Durgesh",
-      position: "Co Founder - Creative Hub",
-      image: "/api/placeholder/400/300",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      position: "CTO - Visionary Ventures",
+      image: t1,
+      text: "From strategy to execution, Creative Hub has been an incredible partner. Their support has been instrumental to our growth.",
     },
     {
       name: "Rohit",
-      position: "Co Founder - Creative Hub",
-      image: "/api/placeholder/400/300",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      position: "Marketing Head - Spark Media",
+      image: t2,
+      text: "The team at Creative Hub has consistently delivered outstanding results. Their creativity and skill are unmatched in the industry.",
     },
   ];
 
@@ -56,7 +59,7 @@ const Testimonials = () => {
       {/* Section Title */}
       <h1 className="text-center text-4xl md:text-5xl lg:text-6xl text-purple-950 mb-4">Our Testimonials</h1>
       <p className="text-center text-lg md:text-2xl mb-10 text-gray-500">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Hear from our satisfied clients and partners.
       </p>
 
       {/* Testimonial Carousel */}
@@ -72,8 +75,8 @@ const Testimonials = () => {
                   offset === 0
                     ? 'z-30 scale-100 opacity-100'
                     : Math.abs(offset) === 1
-                    ? 'z-20 scale-95 opacity-50'
-                    : 'z-10 scale-90 opacity-25'
+                    ? 'z-20 scale-95 opacity-30'
+                    : 'z-10 scale-90 opacity-10'
                 }`}
                 style={{
                   transform: `translateX(${offset * 40}%) scale(${
@@ -82,7 +85,7 @@ const Testimonials = () => {
                 }}
               >
                 <div className="bg-purple-950 rounded-3xl p-4 md:p-6 w-[280px] h-[400px] md:w-[360px] md:h-[450px] lg:w-[360px] lg:h-[600px] shadow-lg">
-                  <div className="bg-blue-700 rounded-2xl w-full h-36 md:h-48 mb-4 overflow-hidden">
+                  <div className="bg-blue-700 rounded-2xl w-full h-36 md:h-[23rem] mb-4 overflow-hidden">
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
@@ -123,8 +126,6 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
-
-
 
 
 

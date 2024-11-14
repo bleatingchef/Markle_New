@@ -9,17 +9,17 @@ const Career = () => {
 
   return (
     <div>
-      <div className="mt-20">
+      <div className="mt-16">
         <img src={carrerbg} alt="Hero Frame" className="w-full h-auto object-cover" />
       </div>
 
       {/* Open Positions Section */}
       <div className="max-w-4xl mx-auto text-center mt-10">
         <h2 className="text-6xl font-bold text-indigo-950 mb-6">Open Positions</h2>
-        <ul className="space-y-6">
+        <ul className="space-y-6 mb-10 ">
           {positions.map((position, index) => (
-            <li key={index} className="p-4 border-b border-gray-300 shadow-sm hover:shadow-lg transition-shadow">
-              <div className="flex justify-between items-center ">
+            <li key={index} className="p-8 w-[60rem] border-b border-gray-300 shadow-sm hover:shadow-lg rounded-2xl transition-shadow bg-gray-50 ">
+              <div className="flex justify-between items-center mb-2 ">
                 <div className="text-left w-3/4">
                   <h3 className="text-xl font-semibold">{position.title}</h3>
                   <p className="text-gray-500">{position.details}</p>

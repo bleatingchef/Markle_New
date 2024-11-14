@@ -21,7 +21,7 @@ const Recipe = () => {
       title: 'Software Development',
       description: 'React, VueJS, NextJS, Angular, NodeJS, Laravel',
       details:
-        'Delivering custom web solutions that are fast, secure and designed to boost your digital journey.',
+        'Delivering custom web solutions that are fast, secure, and designed to boost your digital journey. Our development expertise spans modern frameworks to create responsive and dynamic applications.',
       icon: web,
       bgGradient: 'bg-gradient-to-r from-blue-500 to-blue-600',
       borderGradient: 'hover:border-t-4 hover:border-t-blue-600',
@@ -31,7 +31,7 @@ const Recipe = () => {
       title: 'E-Commerce',
       description: 'Magento, Shopify',
       details:
-        'Crafting custom e-commerce websites that drive sales, enhance user experience and secure online transactions.',
+        'Crafting custom e-commerce websites that drive sales, enhance user experience, and ensure secure online transactions. From product catalogs to checkout flows, we build solutions that scale.',
       icon: ecomm,
       bgGradient: 'bg-gradient-to-r from-indigo-500 to-indigo-600',
       borderGradient: 'hover:border-t-4 hover:border-t-indigo-600',
@@ -41,7 +41,7 @@ const Recipe = () => {
       title: 'Testing & QA',
       description: 'React Native, Flutter',
       details:
-        'Building scalable & secure apps with customized features, ensuring smooth user experience and driving growth.',
+        'Ensuring app reliability and performance with rigorous testing & QA processes. Our scalable and secure testing methods ensure customized features provide smooth, error-free user experiences.',
       icon: app,
       bgGradient: 'bg-gradient-to-r from-purple-700 to-purple-800',
       borderGradient: 'hover:border-t-4 hover:border-t-purple-800',
@@ -51,7 +51,7 @@ const Recipe = () => {
       title: 'Custom Software',
       description: 'Electron.js',
       details:
-        'Crafting tailored software systems that solve complex challenges, automate tasks & achieve business efficiency.',
+        'Crafting tailored software systems that solve complex challenges, automate tasks, and enhance business efficiency. Our custom software solutions are designed to meet specific organizational needs.',
       icon: software,
       bgGradient: 'bg-gradient-to-r from-purple-700 to-purple-500',
       borderGradient: 'hover:border-t-4 hover:border-t-purple-500',
@@ -61,7 +61,7 @@ const Recipe = () => {
       title: 'UI / UX Design',
       description: 'React, Angular, NodeJS',
       details:
-        'Designing interfaces that are both beautiful & easily accessible ensuring user satisfaction at every scroll.',
+        'Designing intuitive interfaces that are visually appealing and easily navigable. We focus on creating engaging user experiences that enhance satisfaction with every interaction.',
       icon: inter,
       bgGradient: 'bg-gradient-to-r from-pink-600 to-pink-500',
       borderGradient: 'hover:border-t-4 hover:border-t-pink-500',
@@ -71,17 +71,18 @@ const Recipe = () => {
       title: 'Social Media Management',
       description: 'Facebook, Instagram, YouTube',
       details:
-        'Elevating your brand with strategic social media management, content creation and targeted campaigning.',
+        'Elevating your brand through strategic social media management, content creation, and targeted campaigning. We help businesses grow their online presence and connect with their audience.',
       icon: socialMedia,
       bgGradient: 'bg-gradient-to-r from-green-600 to-green-500',
       borderGradient: 'hover:border-t-4 hover:border-t-green-500',
     },
+    
     {
       id: 7,
       title: 'SaaS Product',
-      description: 'React, Angular, Node Js',
+      description: 'React, Angular, Node.js',
       details:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.',
+        'Our SaaS Product solutions help businesses deploy scalable and high-performing applications quickly. With expertise in full-stack development using React, Angular, and Node.js, we deliver robust products tailored to client needs.',
       icon: saas,
       bgGradient: 'bg-gradient-to-r from-blue-600 to-blue-500',
       borderGradient: 'hover:border-t-4 hover:border-t-blue-500',
@@ -91,7 +92,7 @@ const Recipe = () => {
       title: 'Low Code/No Code',
       description: 'Magento, Shopify',
       details:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.',
+        'Our Low Code/No Code services enable faster development cycles for e-commerce platforms on Magento and Shopify. Ideal for businesses looking to reduce development time while achieving robust functionality.',
       icon: lowcode,
       bgGradient: 'bg-gradient-to-r from-indigo-600 to-indigo-500',
       borderGradient: 'hover:border-t-4 hover:border-t-indigo-500',
@@ -101,7 +102,7 @@ const Recipe = () => {
       title: 'IT Consulting Service',
       description: 'React Native, Flutter',
       details:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.',
+        'Our IT Consulting Services provide insights and technical expertise in mobile app development using React Native and Flutter. We assist businesses in crafting cross-platform applications for enhanced customer engagement.',
       icon: app,
       bgGradient: 'bg-gradient-to-r from-purple-700 to-purple-800',
       borderGradient: 'hover:border-t-4 hover:border-t-blue-600',
@@ -109,9 +110,9 @@ const Recipe = () => {
     {
       id: 10,
       title: 'Digital Marketing',
-      description: 'Electron.Js',
+      description: 'Electron.js',
       details:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.',
+        'Our Digital Marketing services include building desktop applications with Electron.js to expand your reach. We help businesses enhance their digital presence and increase customer engagement through targeted strategies.',
       icon: digital,
       bgGradient: 'bg-gradient-to-r from-purple-700 to-purple-500',
       borderGradient: 'hover:border-t-4 hover:border-t-purple-500',
@@ -119,9 +120,9 @@ const Recipe = () => {
     {
       id: 11,
       title: 'MVP Development',
-      description: 'React, Angular, Node Js',
+      description: 'React, Angular, Node.js',
       details:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.',
+        'Our MVP Development services enable startups and businesses to validate ideas quickly with minimum resources. Using React, Angular, and Node.js, we deliver functional prototypes that align with business goals.',
       icon: mvp,
       bgGradient: 'bg-gradient-to-r from-pink-600 to-pink-500',
       borderGradient: 'hover:border-t-4 hover:border-t-pink-500',
@@ -129,13 +130,14 @@ const Recipe = () => {
     {
       id: 12,
       title: 'DevOps Consulting',
-      description: 'React, Angular, Node Js',
+      description: 'React, Angular, Node.js',
       details:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.',
+        'Our DevOps Consulting services streamline the development lifecycle, enhancing collaboration and deployment speed. Leveraging best practices in React, Angular, and Node.js, we ensure seamless operations across environments.',
       icon: devops,
       bgGradient: 'bg-gradient-to-r from-green-600 to-green-500',
       borderGradient: 'hover:border-t-4 hover:border-t-green-500',
     },
+    
   ];
 
   const getServiceContent = (service) => {

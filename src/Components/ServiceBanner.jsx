@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 // Import all your images here
 import gradient1 from '../assets/servicesImg/gradient1.png';
 import wave1 from '../assets/servicesImg/wave1.png';
+
 // Add more imports for specific service backgrounds as needed
 
 const ServiceBanner = () => {
@@ -96,6 +97,7 @@ const ServiceBanner = () => {
 
   return (
     <div className="relative mx-auto text-center mt-16">
+     
       <div className="relative w-full mb-32 md:mb-80">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white via-transparent to-transparent z-10"></div>
         <img src={content.backgroundImage} alt="Background Gradient" className="w-full object-cover opacity-50" />

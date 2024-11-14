@@ -11,9 +11,16 @@ const Welcome = () => {
           Welcome to Markle Tech IT Solutions
         </h1>
 
-        <p className="text-sm sm:text-xl text-center text-gray-800 mb-16">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        <p className="text-sm sm:text-xl text-center text-gray-800 mb-4">
+        At Markle Tech IT Solutions, we are dedicated to providing cutting-edge technology solutions to empower businesses and enhance their digital transformation journey. With a commitment to innovation, reliability, and customer satisfaction, we work closely with our clients to address their unique needs and challenges.</p>
+
+<p className="text-sm sm:text-xl text-center text-gray-800 mb-16">
+   Our services range from custom software development and cloud computing to data analytics and cybersecurity, helping companies streamline operations, improve efficiency, and stay ahead in a competitive landscape. Our experienced team of IT professionals combines technical expertise with industry insights to deliver scalable and sustainable solutions.</p>
+
+{/* Let us be your trusted partner in driving growth and unlocking new possibilities for your business. */}
+
+
+        
 
         <div className="space-y-6 sm:space-y-0 sm:flex sm:justify-between">
           {/* Past Work Section */}

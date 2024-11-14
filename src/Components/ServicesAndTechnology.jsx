@@ -11,6 +11,7 @@ import mvp from '../assets/mvp.png';
 import devops from '../assets/devops.png';
 import digital from '../assets/digital.png';
 import lowcode from '../assets/lowcode.png';
+import seeallservicebg from "../assets/servicesImg/seeallservicebg.png"
 // import mvp from '../assets/mvp.png';
 
 const ServicesAndTechnology = () => {
@@ -86,9 +87,8 @@ const ServicesAndTechnology = () => {
     {
       id: 7,
       title: 'MVP Development',
-      description: 'Lorem ipsum',
-      details:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt',
+      description: 'React, Angular, Node.js, MongoDB',
+      details: 'Quickly bring ideas to life with a minimum viable product designed to validate your concept in the market.',
       icon: mvp,
       bgGradient: 'bg-gradient-to-r from-blue-600 to-blue-500',
       borderGradient: 'hover:border-t-4 hover:border-t-blue-500',
@@ -96,10 +96,9 @@ const ServicesAndTechnology = () => {
     },
     {
       id: 8,
-      title: 'DevOps Consulting ',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt',
-      details:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.',
+      title: 'DevOps Consulting',
+      description: 'CI/CD, Kubernetes, Docker, Jenkins, AWS',
+      details: 'Streamline your development process with automation and continuous integration for faster, reliable deployments.',
       icon: devops,
       bgGradient: 'bg-gradient-to-r from-indigo-600 to-indigo-500',
       borderGradient: 'hover:border-t-4 hover:border-t-indigo-500',
@@ -108,9 +107,8 @@ const ServicesAndTechnology = () => {
     {
       id: 9,
       title: 'IT Consulting Service',
-      description: 'React Native, Flutter',
-      details:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.',
+      description: 'React Native, Flutter, Swift, Kotlin',
+      details: 'Enhance your tech stack and project architecture with expert guidance in mobile and cross-platform development.',
       icon: saas,
       bgGradient: 'bg-gradient-to-r from-purple-700 to-purple-800',
       borderGradient: 'hover:border-t-4 hover:border-t-blue-600',
@@ -119,9 +117,8 @@ const ServicesAndTechnology = () => {
     {
       id: 10,
       title: 'Digital Marketing',
-      description: 'Electron.Js',
-      details:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.',
+      description: 'SEO, SEM, Social Media, Content Marketing',
+      details: 'Boost your online presence and engagement with data-driven digital marketing strategies tailored to your audience.',
       icon: digital,
       bgGradient: 'bg-gradient-to-r from-purple-700 to-purple-500',
       borderGradient: 'hover:border-t-4 hover:border-t-purple-500',
@@ -129,10 +126,9 @@ const ServicesAndTechnology = () => {
     },
     {
       id: 11,
-      title: 'MVP Development',
-      description: 'React, Angular, Node Js',
-      details:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.',
+      title: 'Advanced MVP Development',
+      description: 'React, Angular, Node.js, Express',
+      details: 'Build a scalable MVP equipped with key features to test your product’s viability and prepare for growth.',
       icon: mvp,
       bgGradient: 'bg-gradient-to-r from-pink-600 to-pink-500',
       borderGradient: 'hover:border-t-4 hover:border-t-pink-500',
@@ -140,15 +136,15 @@ const ServicesAndTechnology = () => {
     },
     {
       id: 12,
-      title: 'DevOps Consulting',
-      description: 'React, Angular, Node Js',
-      details:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.',
+      title: 'Advanced DevOps Consulting',
+      description: 'Kubernetes, Terraform, AWS, Azure, GCP',
+      details: 'Optimize infrastructure and automate workflows to enhance your application’s resilience and efficiency.',
       icon: devops,
       bgGradient: 'bg-gradient-to-r from-green-600 to-green-500',
       borderGradient: 'hover:border-t-4 hover:border-t-green-500',
       isHover: true,
     },
+    
   ];
 
   const getServiceContent = (service) => {
@@ -168,7 +164,10 @@ const ServicesAndTechnology = () => {
   };
 
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="py-16 px-4 sm:px-6 lg:px-8">
+      <div className="pr-40 pl-40 animate-slideInLeft1">
+    <img src={seeallservicebg} alt="Frame 1" className="w-[100rem] max-w-full" />
+  </div>
       {/* Section Title */}
       <h2 className="text-3xl md:text-4xl lg:text-5xl text-purple-950 mb-8 text-center">Our Recipe for Success</h2>
       <p className="text-center text-xl mb-8 text-gray-500">Our Toolbox of Advanced Technologies and Services</p>

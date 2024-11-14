@@ -13,7 +13,7 @@ const About_com = () => {
         <AboutData/>
         <Welcome/>
         <About_Recipe/>
-        <DateWiseAboutCompany/>
+        {/* <DateWiseAboutCompany/> */}
         <Map/>
         {/* <AboutTestimonials/> */}
     </div>

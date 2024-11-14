@@ -5,9 +5,9 @@ const BecomeOurAgent = () => {
   return (
     <div>
       {/* Hero Image */}
-      <div className="mt-20">
+      {/* <div className="mt-20">
         <img src={becomeouragentbg} alt="Hero Frame" className="w-full h-auto object-cover" />
-      </div>
+      </div> */}
 
       {/* Contact Form Section */}
       <div className="flex flex-col md:flex-row justify-center items-start my-10"> {/* Changed from items-center to items-start */}
